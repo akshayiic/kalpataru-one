@@ -134,7 +134,7 @@
 				</button>
 
 				<div class="title text-2xl">virtual tour experience</div>
-				<div class="subtitle">by Kalpataru Groups</div>
+				<div class="subtitle">by Kalpataru</div>
 			</div>
 		</div>
 	</div>

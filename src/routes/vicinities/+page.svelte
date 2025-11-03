@@ -89,7 +89,7 @@
 		>
 			<div class="no-hovers pt-3">
 				<div class="inner-btn-group">
-					<Accordion.Root class="w-full sm:max-w-full" multiple={true}>
+					<Accordion.Root class="w-full sm:max-w-full">
 						<Accordion.Item class="hidden" value="item-1wqweqweqweqwe">
 							<Accordion.Trigger id="station-level-ss" class="hidden">asdasdasd</Accordion.Trigger>
 						</Accordion.Item>
@@ -116,7 +116,7 @@
 								Shopping & Entertainment
 							</Accordion.Trigger>
 							<Accordion.Content>
-								{#each [{ id: 'Four Seasons.webp', label: 'Four Seasons' }, { id: 'Nehru Planetarium.webp', label: 'Nehru Planetarium' }, { id: 'Kamala Mills Compound.webp', label: 'Kamala Mills Compound' }, { id: 'Todi Mills Compound.webp', label: 'Todi Mills Compound' }, { id: 'Willingdon Sports Club.webp', label: 'Willingdon Sports Club' }, { id: 'Bombay Gymkhana.webp', label: 'Bombay Gymkhana' }, { id: 'Jio World Drive.webp', label: 'Jio World Drive' }, { id: 'Towards Bay Club.webp', label: 'Towards Bay Club' }] as scene}
+								{#each [{ id: 'Four Seasons.webp', label: 'Four Seasons' }, { id: 'Nehru Planetarium.webp', label: 'Nehru Planetarium' }, { id: 'St.Regis.webp', label: 'St.Regis' }, { id: 'Kamala Mills Compound.webp', label: 'Kamala Mills Compound' }, { id: 'Todi Mills Compound.webp', label: 'Todi Mills Compound' }, { id: 'Willingdon Sports Club.webp', label: 'Willingdon Sports Club' }, { id: 'Bombay Gymkhana.webp', label: 'Bombay Gymkhana' }, { id: 'Jio World Drive.webp', label: 'Jio World Drive' }, { id: 'Towards Bay Club.webp', label: 'Towards Bay Club' }] as scene}
 									<button
 										class={$vicinityImg == scene.id ? 'active inner-modal-btn' : 'inner-modal-btn'}
 										id={'x-' + scene.id.replaceAll(/[\s.]+/g, '-') + '-am'}
