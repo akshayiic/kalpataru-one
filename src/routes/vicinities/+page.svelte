@@ -44,7 +44,7 @@
 	}
 </script>
 
-<!-- <div class="left-panel-wrapper">
+<div class="left-panel-wrapper">
 	<div class="left-panel p-2">
 		<div class="left-panel--header flex justify-between gap-[2rem] lg:gap-[5rem]">
 			<div class="left-title flex items-center font-bold">
@@ -94,33 +94,14 @@
 							<Accordion.Trigger id="station-level-ss" class="hidden">asdasdasd</Accordion.Trigger>
 						</Accordion.Item>
 
-						<Accordion.Item value="transport">
-							<Accordion.Trigger id="transport-level" class="acc-label"
-								>Connectivity</Accordion.Trigger
-							>
+						<Accordion.Item value="connectivity">
+							<Accordion.Trigger id="connectivity-level" class="acc-label">
+								Connectivity
+							</Accordion.Trigger>
 							<Accordion.Content>
-								{#each [{ id: 'Sakinaka Metro Station.webp', label: 'Sakinaka Metro Station' }, { id: 'Andheri Kurla Road.webp', label: 'Andheri Kurla Road' }, { id: 'Upcoming Rambaug Metro Station.webp', label: 'Upcoming Rambaug Metro Station' }, { id: 'JVLR.webp', label: 'JVLR' }, { id: 'Ghatkopar Railway Station.webp', label: 'Ghatkopar Railway Station' }, { id: 'Aarey Aqua Metro Station.webp', label: 'Aarey Aqua Metro Station' }, { id: 'SEEPZ METRO.webp', label: 'SEEPZ Metro' }, { id: 'T2 International Airport.webp', label: 'T2 International Airport' }, { id: 'LBS Road - Vikhroli.webp', label: 'LBS Road - Vikhroli' }, { id: 'MIDC METRO.webp', label: 'MIDC Metro' }, { id: 'Eastern Express Highway.webp', label: 'Eastern Express Highway' }, { id: 'Andheri Railway Station.webp', label: 'Andheri Railway Station' }, { id: 'Western Express Highway.webp', label: 'Western Express Highway' }, { id: 'Ghatkopar Mankhurd Link Road.webp', label: 'Ghatkopar Mankhurd Link Road' }, { id: 'Bandra Worli Sea Link.webp', label: 'Bandra Worli Sea Link' }] as scene}
+								{#each [{ id: 'Towards Mumbai Trans Harbour Link.webp', label: 'Towards Mumbai Trans Harbour Link' }, { id: 'Coastal Road.webp', label: 'Coastal Road' }, { id: 'Towards T2 terminal_ CSIA.webp', label: 'Towards T2 terminal/ CSIA' }, { id: 'Upcoming Worli- Sewri Elevated Connecter.webp', label: 'Upcoming Worli- Sewri Elevated Connecter' }, { id: 'Bandra - Worli Sea Link.webp', label: 'Bandra - Worli Sea Link' }] as scene}
 									<button
-										class={$vicinityImg == scene.id
-											? 'active inner-modal-btn '
-											: 'inner-modal-btn '}
-										id={'x-' + scene.id.replaceAll(/[\s.]+/g, '-') + '-am'}
-										on:click={() => vicinityImg.set(scene.id)}
-									>
-										{scene.label}
-									</button>
-								{/each}
-							</Accordion.Content>
-						</Accordion.Item>
-
-						<Accordion.Item value="recreation">
-							<Accordion.Trigger id="recreation-level">Recreation</Accordion.Trigger>
-							<Accordion.Content>
-								{#each [{ id: 'ITC Maratha.webp', label: 'ITC Maratha' }, { id: 'Grand Hyatt.webp', label: 'Grand Hyatt' }, { id: 'Westin Powai.webp', label: 'Westin Powai' }, { id: 'Leela Hotel.webp', label: 'Leela Hotel' }, { id: 'The Lalit.webp', label: 'The Lalit' }, { id: 'JW Marriot.webp', label: 'JW Marriot' }] as scene}
-									<button
-										class={$vicinityImg == scene.id
-											? 'active inner-modal-btn '
-											: 'inner-modal-btn '}
+										class={$vicinityImg == scene.id ? 'active inner-modal-btn' : 'inner-modal-btn'}
 										id={'x-' + scene.id.replaceAll(/[\s.]+/g, '-') + '-am'}
 										on:click={() => vicinityImg.set(scene.id)}
 									>
@@ -131,13 +112,13 @@
 						</Accordion.Item>
 
 						<Accordion.Item value="shopping">
-							<Accordion.Trigger id="shopping-level">Lifestyle</Accordion.Trigger>
+							<Accordion.Trigger id="shopping-level" class="acc-label">
+								Shopping & Entertainment
+							</Accordion.Trigger>
 							<Accordion.Content>
-								{#each [{ id: 'D Mart.webp', label: 'D Mart' }, { id: 'Canopy High Street @Amaryllis.webp', label: 'Canopy High Street @Amaryllis' }, { id: 'Haiko SuperMarket.webp', label: 'Haiko SuperMarket' }, { id: 'Phoenix Market City.webp', label: 'Phoenix Market City' }, { id: 'R City Mall.webp', label: 'R City Mall' }, { id: 'Jio World Drive.webp', label: 'Jio World Drive' }] as scene}
+								{#each [{ id: 'Four Seasons.webp', label: 'Four Seasons' }, { id: 'Nehru Planetarium.webp', label: 'Nehru Planetarium' }, { id: 'Kamala Mills Compound.webp', label: 'Kamala Mills Compound' }, { id: 'Todi Mills Compound.webp', label: 'Todi Mills Compound' }, { id: 'Willingdon Sports Club.webp', label: 'Willingdon Sports Club' }, { id: 'Bombay Gymkhana.webp', label: 'Bombay Gymkhana' }, { id: 'Jio World Drive.webp', label: 'Jio World Drive' }, { id: 'Towards Bay Club.webp', label: 'Towards Bay Club' }] as scene}
 									<button
-										class={$vicinityImg == scene.id
-											? 'active inner-modal-btn '
-											: 'inner-modal-btn '}
+										class={$vicinityImg == scene.id ? 'active inner-modal-btn' : 'inner-modal-btn'}
 										id={'x-' + scene.id.replaceAll(/[\s.]+/g, '-') + '-am'}
 										on:click={() => vicinityImg.set(scene.id)}
 									>
@@ -148,13 +129,13 @@
 						</Accordion.Item>
 
 						<Accordion.Item value="education">
-							<Accordion.Trigger id="education-level">Education</Accordion.Trigger>
+							<Accordion.Trigger id="education-level" class="acc-label">
+								Education Institutes
+							</Accordion.Trigger>
 							<Accordion.Content>
-								{#each [{ id: 'Bees and Cubs Pre School and Day Care.webp', label: 'Bees and Cubs Pre School and Day Care' }, { id: 'Pawar Public School.webp', label: 'Pawar Public School' }, { id: 'Gopal Sharma School.webp', label: 'Gopal Sharma School' }, { id: 'Bombay Scottish.webp', label: 'Bombay Scottish' }, { id: 'SM Shetty School.webp', label: 'SM Shetty School' }, { id: 'Hiranandani Foundation School.webp', label: 'Hiranandani Foundation School' }, { id: 'A. M. Naik School.webp', label: 'A. M. Naik School' }, { id: 'IIT Bombay.webp', label: 'IIT Bombay' }, { id: 'Podar International School.webp', label: 'Podar International School' }, { id: 'IIM Mumbai.webp', label: 'IIM Mumbai' }] as scene}
+								{#each [{ id: 'Podar ORT International School.webp', label: 'Podar ORT International School' }, { id: 'Towards Dhirubhai Ambani International School.webp', label: 'Towards Dhirubhai Ambani International School' }, { id: 'Bombay Scottish.webp', label: 'Bombay Scottish' }, { id: 'KGT International School.webp', label: 'KGT International School' }] as scene}
 									<button
-										class={$vicinityImg == scene.id
-											? 'active inner-modal-btn '
-											: 'inner-modal-btn '}
+										class={$vicinityImg == scene.id ? 'active inner-modal-btn' : 'inner-modal-btn'}
 										id={'x-' + scene.id.replaceAll(/[\s.]+/g, '-') + '-am'}
 										on:click={() => vicinityImg.set(scene.id)}
 									>
@@ -164,14 +145,14 @@
 							</Accordion.Content>
 						</Accordion.Item>
 
-						<Accordion.Item value="healthcare">
-							<Accordion.Trigger id="healthcare-level">Hospitals</Accordion.Trigger>
+						<Accordion.Item value="hospitals">
+							<Accordion.Trigger id="hospitals-level" class="acc-label">
+								Hospitals
+							</Accordion.Trigger>
 							<Accordion.Content>
-								{#each [{ id: 'Sanofi Healthcare Centre.webp', label: 'Sanofi Healthcare Centre' }, { id: 'Hiranandani Hospital.webp', label: 'Hiranandani Hospital' }, { id: 'Seven Hills Hospital.webp', label: 'Seven Hills Hospital' }, { id: 'Balasaheb Thackeray Trauma Centre.webp', label: 'Balasaheb Thackeray Trauma Centre' }, { id: 'Godrej Memorial Hospital.webp', label: 'Godrej Memorial Hospital' }] as scene}
+								{#each [{ id: 'Breach Candy Hospital.webp', label: 'Breach Candy Hospital' }, { id: 'Wockhardt Hospital.webp', label: 'Wockhardt Hospital' }, { id: 'P.D. Hinduja Hospital.webp', label: 'P.D. Hinduja Hospital' }, { id: 'Lilavati Hospital.webp', label: 'Lilavati Hospital' }] as scene}
 									<button
-										class={$vicinityImg == scene.id
-											? 'active inner-modal-btn '
-											: 'inner-modal-btn '}
+										class={$vicinityImg == scene.id ? 'active inner-modal-btn' : 'inner-modal-btn'}
 										id={'x-' + scene.id.replaceAll(/[\s.]+/g, '-') + '-am'}
 										on:click={() => vicinityImg.set(scene.id)}
 									>
@@ -181,48 +162,14 @@
 							</Accordion.Content>
 						</Accordion.Item>
 
-						<Accordion.Item value="business">
-							<Accordion.Trigger id="business-level">Business Districts</Accordion.Trigger>
+						<Accordion.Item value="commercial">
+							<Accordion.Trigger id="commercial-level" class="acc-label">
+								Commercial Hubs
+							</Accordion.Trigger>
 							<Accordion.Content>
-								{#each [{ id: 'Boomerang  Building.webp', label: 'Boomerang Building' }, { id: 'Powai.webp', label: 'Powai' }, { id: 'Times Square.webp', label: 'Times Square' }, { id: 'L&T Business park.webp', label: 'L&T Business park' }, { id: 'Seepz.webp', label: 'Seepz' }, { id: 'MIDC.webp', label: 'MIDC' }, { id: 'solitaire corporate park.webp', label: 'Solitaire Corporate Park' }, { id: 'Bandra Kurla Complex.webp', label: 'Bandra Kurla Complex' }, { id: 'NESCO.webp', label: 'NESCO' }, { id: 'Airoli MBB Business Center.webp', label: 'Airoli MBB Business Center' }] as scene}
+								{#each [{ id: 'Lower Parel.webp', label: 'Lower Parel' }, { id: 'Towards Nariman Point.webp', label: 'Towards Nariman Point' }, { id: 'Towards BKC.webp', label: 'Towards BKC' }] as scene}
 									<button
-										class={$vicinityImg == scene.id
-											? 'active inner-modal-btn '
-											: 'inner-modal-btn '}
-										id={'x-' + scene.id.replaceAll(/[\s.]+/g, '-') + '-am'}
-										on:click={() => vicinityImg.set(scene.id)}
-									>
-										{scene.label}
-									</button>
-								{/each}
-							</Accordion.Content>
-						</Accordion.Item>
-
-						<Accordion.Item value="religious">
-							<Accordion.Trigger id="religious-level">Temples</Accordion.Trigger>
-							<Accordion.Content>
-								{#each [{ id: 'Jain Temple.webp', label: 'Jain Temple' }, { id: 'Suvarna Temple.webp', label: 'Suvarna Temple' }, { id: 'Mahakali Temple.webp', label: 'Mahakali Temple' }] as scene}
-									<button
-										class={$vicinityImg == scene.id
-											? 'active inner-modal-btn '
-											: 'inner-modal-btn '}
-										id={'x-' + scene.id.replaceAll(/[\s.]+/g, '-') + '-am'}
-										on:click={() => vicinityImg.set(scene.id)}
-									>
-										{scene.label}
-									</button>
-								{/each}
-							</Accordion.Content>
-						</Accordion.Item>
-
-						<Accordion.Item value="parks">
-							<Accordion.Trigger id="parks-level">Parks</Accordion.Trigger>
-							<Accordion.Content>
-								{#each [{ id: 'Miyawaki Forest.webp', label: 'Miyawaki Forest' }] as scene}
-									<button
-										class={$vicinityImg == scene.id
-											? 'active inner-modal-btn '
-											: 'inner-modal-btn '}
+										class={$vicinityImg == scene.id ? 'active inner-modal-btn' : 'inner-modal-btn'}
 										id={'x-' + scene.id.replaceAll(/[\s.]+/g, '-') + '-am'}
 										on:click={() => vicinityImg.set(scene.id)}
 									>
@@ -236,7 +183,7 @@
 			</div>
 		</div>
 	</div>
-</div> -->
+</div>
 
 <div class={'d-block visible absolute bottom-0 left-0 right-0 top-0'}>
 	<div
