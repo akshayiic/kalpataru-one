@@ -1,5 +1,5 @@
 <script>
-	import { goto } from '$app/navigation';
+	import { afterNavigate, goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { onMount, setContext } from 'svelte';
 	import { writable } from 'svelte/store';
@@ -106,6 +106,60 @@
 		script.setAttribute('data-vretail-project-id', import.meta.env.VITE_PROJECT_ID);
 		script.src = import.meta.env.VITE_COLLAB_URL;
 		document.body.insertAdjacentElement('beforeend', script);
+
+		const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+		if (isIOS) {
+			// Trigger auto-fullscreen via scroll
+			const triggerFullscreen = () => {
+				// Small scroll to hide address bar
+				window.scrollTo(0, 1);
+
+				// Scroll back to top after brief delay
+				setTimeout(() => {
+					window.scrollTo(0, 0);
+				}, 100);
+			};
+
+			// Trigger on load
+			setTimeout(triggerFullscreen, 300);
+
+			// Trigger on orientation change
+			window.addEventListener('orientationchange', () => {
+				setTimeout(triggerFullscreen, 500);
+			});
+
+			// Keep UI elements on top
+			const fixUIPositions = () => {
+				const nav = document.querySelector('.nav-wrapper');
+				const leftPanel = document.querySelector('.left-panel-wrapper');
+				const colorMode = document.querySelector('.color-mode-wrapper');
+
+				[nav, leftPanel, colorMode].forEach((el) => {
+					if (el) {
+						el.style.position = 'fixed';
+					}
+				});
+			};
+
+			setTimeout(fixUIPositions, 100);
+		}
+	});
+
+	afterNavigate(() => {
+		const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+		if (!isIOS) return;
+
+		// re-trigger fullscreen & fix positions
+		setTimeout(() => {
+			window.scrollTo(0, 1);
+			setTimeout(() => window.scrollTo(0, 0), 100);
+
+			['.nav-wrapper', '.left-panel-wrapper', '.color-mode-wrapper'].forEach((sel) => {
+				const el = document.querySelector(sel);
+				if (el) el.style.position = 'fixed';
+			});
+		}, 400);
 	});
 </script>
 
@@ -144,7 +198,7 @@
 		src={mainLogo}
 		alt=""
 		id="mainLogo"
-		class="absolute left-4 top-[0.75rem] z-[200] w-[10rem] rounded lg:w-[18rem]"
+		class="fixed left-4 top-[0.75rem] z-[200] w-[10rem] rounded lg:w-[18rem]"
 	/>
 
 	<div class={'nav-wrapper ' + ($navSlide ? 'active-drop-wrapper' : '')}>

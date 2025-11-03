@@ -33,15 +33,6 @@
 
 		console.log('sss');
 	});
-
-	const isDay = writable();
-
-	function toggleDayNight() {
-		isDay.update((value) => !value);
-		isDay.subscribe((value) => {
-			// hotspotName.set(value ? 'night' : 'Exterior');
-		});
-	}
 </script>
 
 <div class="left-panel-wrapper">
@@ -187,21 +178,8 @@
 
 <div class={'d-block visible absolute bottom-0 left-0 right-0 top-0'}>
 	<div
-		class={`cloudimage-360  vicinity-box z-50 ${$isDay || $vicinityImg != '-' ? 'invisible !absolute' : 'visible !absolute'}`}
+		class={`cloudimage-360  vicinity-box visible !absolute z-50`}
 		data-folder="https://assets.vestate.io/kalpataru-one/vicinity/"
-		data-filename="{'vic{'}index{'}'}.webp"
-		data-amount="24"
-		data-keys="false"
-		data-filters="blur:20"
-		data-drag-speed="400"
-		data-request-responsive-images="true"
-		data-info="false"
-		data-ratio="1"
-	></div>
-
-	<div
-		class={`cloudimage-360  vicinity-box z-50 ${!$isDay || $vicinityImg != '-' ? 'invisible' : 'visible  !absolute '}`}
-		data-folder="https://assets.vestate.io/kalpataru-one/vicinities/night/"
 		data-filename="{'vic{'}index{'}'}.webp"
 		data-amount="24"
 		data-keys="false"
