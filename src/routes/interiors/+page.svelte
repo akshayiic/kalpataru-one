@@ -628,7 +628,7 @@
 			allScenes['1-livingroom'].scene,
 			{ yaw: -2.746961645755448, pitch: -0.018517236996281383 },
 			allScenes['6-family'].scene,
-			'Family',
+			'Family Lounge',
 			'6-family'
 		);
 
@@ -652,7 +652,7 @@
 			allScenes['1-livingroom'].scene,
 			{ yaw: 2.938104446870339, pitch: -0.039868944542897466 },
 			allScenes['3-dinning'].scene,
-			'Dinning',
+			'Dining Area',
 			'3-dinning'
 		);
 
@@ -668,7 +668,7 @@
 			allScenes['2-deck'].scene,
 			{ yaw: -2.3993458125313367, pitch: 0.019691592088422638 },
 			allScenes['3-dinning'].scene,
-			'Dinning',
+			'Dining Area',
 			'3-dinning'
 		);
 
@@ -708,7 +708,7 @@
 			allScenes['3-dinning'].scene,
 			{ yaw: -2.6834655517500714, pitch: 0.004577913871454342 },
 			allScenes['6-family'].scene,
-			'Family',
+			'Family Lounge',
 			'6-family'
 		);
 
@@ -764,7 +764,7 @@
 			allScenes['6-family'].scene,
 			{ yaw: -1.9306613937229269, pitch: -0.08889997736826416 },
 			allScenes['13-kidroom'].scene,
-			'KidRoom',
+			`Kids Room`,
 			'13-kidroom'
 		);
 
@@ -772,7 +772,7 @@
 			allScenes['6-family'].scene,
 			{ yaw: 1.979121143235596, pitch: -0.0760965888055054 },
 			allScenes['7-masterbed4bhkph'].scene,
-			'MasterBed',
+			'Master Bedroom',
 			'7-masterbed4bhkph'
 		);
 
@@ -780,7 +780,7 @@
 			allScenes['6-family'].scene,
 			{ yaw: 2.4309741205923743, pitch: -0.1465542783115268 },
 			allScenes['10-guestroom014bhk'].scene,
-			'GuestRoom01',
+			'Guest Room 1',
 			'10-guestroom014bhk'
 		);
 
@@ -788,7 +788,7 @@
 			allScenes['6-family'].scene,
 			{ yaw: -2.4300585524334366, pitch: -0.10729125151671681 },
 			allScenes['15-guestroom2'].scene,
-			'GuestRoom2',
+			'Guest Room 2',
 			'15-guestroom2'
 		);
 
@@ -804,7 +804,7 @@
 			allScenes['7-masterbed4bhkph'].scene,
 			{ yaw: -0.761104394755197, pitch: -0.10403522908446128 },
 			allScenes['8-masterwardrobe'].scene,
-			'MasterWardrobe',
+			'Master Wardrobe',
 			'8-masterwardrobe'
 		);
 
@@ -812,7 +812,7 @@
 			allScenes['7-masterbed4bhkph'].scene,
 			{ yaw: -0.9625168351362223, pitch: -0.19367814414646745 },
 			allScenes['6-family'].scene,
-			'Family',
+			'Family Lounge',
 			'6-family'
 		);
 
@@ -836,7 +836,7 @@
 			allScenes['8-masterwardrobe'].scene,
 			{ yaw: 1.3440521290900538, pitch: -0.16193809231187117 },
 			allScenes['6-family'].scene,
-			'Family',
+			'Family Lounge',
 			'6-family'
 		);
 
@@ -844,7 +844,7 @@
 			allScenes['8-masterwardrobe'].scene,
 			{ yaw: -0.9172194990801685, pitch: -0.11508678047253085 },
 			allScenes['7-masterbed4bhkph'].scene,
-			'MasterBed',
+			'Master Bedroom',
 			'7-masterbed4bhkph'
 		);
 
@@ -860,7 +860,7 @@
 			allScenes['9-masterwashroom'].scene,
 			{ yaw: 2.3971239518872665, pitch: -0.24259588526967946 },
 			allScenes['7-masterbed4bhkph'].scene,
-			'MasterBed',
+			'Master Bedroom',
 			'7-masterbed4bhkph'
 		);
 
@@ -868,7 +868,7 @@
 			allScenes['9-masterwashroom'].scene,
 			{ yaw: 1.4564197354957908, pitch: -0.12093584936041069 },
 			allScenes['8-masterwardrobe'].scene,
-			'MasterWardrobe',
+			'Master Wardrobe',
 			'8-masterwardrobe'
 		);
 
@@ -876,7 +876,7 @@
 			allScenes['10-guestroom014bhk'].scene,
 			{ yaw: -2.1566440218106813, pitch: -0.0885403900833488 },
 			allScenes['11-guestwardrobe1'].scene,
-			'Guest Wardrobe 1',
+			'Wardrobe 1',
 			'11-guestwardrobe1'
 		);
 
@@ -892,7 +892,7 @@
 			allScenes['11-guestwardrobe1'].scene,
 			{ yaw: -2.131615846972444, pitch: -0.06450909324161458 },
 			allScenes['10-guestroom014bhk'].scene,
-			'GuestRoom01',
+			'Guest Room 1',
 			'10-guestroom014bhk'
 		);
 
@@ -900,7 +900,7 @@
 			allScenes['11-guestwardrobe1']?.scene,
 			{ yaw: 2.8096997410310562, pitch: -0.08616276721563665 },
 			allScenes['12-guestwashroom1'].scene,
-			'GuestWashroom1',
+			'Guest Washroom 1',
 			'12-guestwashroom1'
 		);
 
@@ -908,7 +908,7 @@
 			allScenes['12-guestwashroom1'].scene,
 			{ yaw: -0.2009928003432364, pitch: -0.14399616037813523 },
 			allScenes['11-guestwardrobe1'].scene,
-			'Guest Wardrobe 1',
+			'Wardrobe 1',
 			'11-guestwardrobe1'
 		);
 
@@ -916,7 +916,7 @@
 			allScenes['12-guestwashroom1'].scene,
 			{ yaw: -1.3714710813054527, pitch: -0.08968042205104254 },
 			allScenes['10-guestroom014bhk'].scene,
-			'GuestRoom01',
+			'Guest Room 1',
 			'10-guestroom014bhk'
 		);
 
@@ -924,7 +924,7 @@
 			allScenes['13-kidroom'].scene,
 			{ yaw: 1.315352591805219, pitch: -0.04187266150332292 },
 			allScenes['6-family'].scene,
-			'Family',
+			'Family Lounge',
 			'6-family'
 		);
 
@@ -940,7 +940,7 @@
 			allScenes['13-kidroom'].scene,
 			{ yaw: 0.31512698528533, pitch: -0.22408781799118493 },
 			allScenes['14-kidswashroom'].scene,
-			'KidsWashRoom',
+			'Kids WashRoom',
 			'14-kidswashroom'
 		);
 
@@ -948,7 +948,7 @@
 			allScenes['14-kidswashroom'].scene,
 			{ yaw: -2.8070903607557227, pitch: -0.10417329006397935 },
 			allScenes['13-kidroom'].scene,
-			'KidRoom',
+			`Kids Room`,
 			'13-kidroom'
 		);
 
@@ -956,7 +956,7 @@
 			allScenes['14-kidswashroom'].scene,
 			{ yaw: 1.9751464380477302, pitch: 0.03493013337116402 },
 			allScenes['6-family'].scene,
-			'Family',
+			'Family Lounge',
 			'6-family'
 		);
 
@@ -972,16 +972,16 @@
 			allScenes['15-guestroom2'].scene,
 			{ yaw: -0.6225644122506289, pitch: -0.044637272363882374 },
 			allScenes['16-guestwardrobe2'].scene,
-			'GuestWardrobe2',
+			'Wardrobe 2',
 			'16-guestwardrobe2'
 		);
 
 		createHotspot(
 			allScenes['15-guestroom2'].scene,
 			{ yaw: -1.3809832370058395, pitch: -0.12973779825676068 },
-			allScenes['15-guestroom2'].scene,
-			'GuestRoom2',
-			'15-guestroom2'
+			allScenes['6-family'].scene,
+			'Family Lounge',
+			'6-family'
 		);
 
 		createHotspot(
@@ -996,7 +996,7 @@
 			allScenes['16-guestwardrobe2'].scene,
 			{ yaw: 2.475115523833386, pitch: -0.05216367325919613 },
 			allScenes['15-guestroom2'].scene,
-			'GuestRoom2',
+			'Guest Room 2',
 			'15-guestroom2'
 		);
 
@@ -1004,7 +1004,7 @@
 			allScenes['16-guestwardrobe2'].scene,
 			{ yaw: 1.5261714005013163, pitch: -0.08240379909032036 },
 			allScenes['17-guestwashroom2'].scene,
-			'GuestWashroom2',
+			'Guest Washroom 2',
 			'17-guestwashroom2'
 		);
 
@@ -1020,7 +1020,7 @@
 			allScenes['17-guestwashroom2'].scene,
 			{ yaw: -2.58773731601951, pitch: -0.09841268462507458 },
 			allScenes['15-guestroom2'].scene,
-			'GuestRoom2',
+			'Guest Room 2',
 			'15-guestroom2'
 		);
 
@@ -1028,7 +1028,7 @@
 			allScenes['17-guestwashroom2'].scene,
 			{ yaw: -0.9645352120665045, pitch: -0.3553582100324846 },
 			allScenes['6-family'].scene,
-			'Family',
+			'Family Lounge',
 			'6-family'
 		);
 
@@ -1044,7 +1044,7 @@
 			allScenes['18-commonwashroom'].scene,
 			{ yaw: 0.677669675605161, pitch: -0.28451618052049277 },
 			allScenes['6-family'].scene,
-			'Family',
+			'Family Lounge',
 			'6-family'
 		);
 
@@ -1072,7 +1072,7 @@
 			allScenes['0-foyer5bhk'].scene,
 			{ yaw: 2.2283189195572595, pitch: 0.020675531969853722 },
 			allScenes['2-seatinglounge'].scene,
-			'SeatingLounge',
+			'Seating Lounge',
 			'2-seatinglounge'
 		);
 
@@ -1096,7 +1096,7 @@
 			allScenes['1-living-room5bhk'].scene,
 			{ yaw: 0.17850797354463133, pitch: -0.032291020550271554 },
 			allScenes['2-seatinglounge'].scene,
-			'SeatingLounge',
+			'Seating Lounge',
 			'2-seatinglounge'
 		);
 
@@ -1120,7 +1120,7 @@
 			allScenes['1-living-room5bhk'].scene,
 			{ yaw: -0.34793368960645665, pitch: -0.10153069146839755 },
 			allScenes['10-masterbedroom'].scene,
-			'MasterBedRoom',
+			'Master BedRoom',
 			'10-masterbedroom'
 		);
 
@@ -1144,7 +1144,7 @@
 			allScenes['2-seatinglounge'].scene,
 			{ yaw: -0.6266276677510998, pitch: -0.11225489979858949 },
 			allScenes['10-masterbedroom'].scene,
-			'MasterBedRoom',
+			'Master BedRoom',
 			'10-masterbedroom'
 		);
 
@@ -1168,7 +1168,7 @@
 			allScenes['3-deck5bhk'].scene,
 			{ yaw: -0.7754998795708108, pitch: 0.004532104023404315 },
 			allScenes['2-seatinglounge'].scene,
-			'SeatingLounge',
+			'Seating Lounge',
 			'2-seatinglounge'
 		);
 
@@ -1184,7 +1184,7 @@
 			allScenes['3-deck5bhk'].scene,
 			{ yaw: -0.9661459218523554, pitch: -0.07468928114955986 },
 			allScenes['10-masterbedroom'].scene,
-			'MasterBedRoom',
+			'Master BedRoom',
 			'10-masterbedroom'
 		);
 
@@ -1192,7 +1192,7 @@
 			allScenes['4-kitchen'].scene,
 			{ yaw: -0.5950326760416491, pitch: -0.03980199175734711 },
 			allScenes['6-dinningarea'].scene,
-			'DinningArea',
+			'Dining Area',
 			'6-dinningarea'
 		);
 
@@ -1200,7 +1200,7 @@
 			allScenes['4-kitchen'].scene,
 			{ yaw: 1.535895304387557, pitch: -0.03387534632737399 },
 			allScenes['2-seatinglounge'].scene,
-			'SeatingLounge',
+			'Seating Lounge',
 			'2-seatinglounge'
 		);
 
@@ -1224,7 +1224,7 @@
 			allScenes['5-utility5bhk'].scene,
 			{ yaw: -1.9951792315065635, pitch: -0.036903837279766094 },
 			allScenes['10-masterbedroom'].scene,
-			'MasterBedRoom',
+			'Master BedRoom',
 			'10-masterbedroom'
 		);
 
@@ -1240,7 +1240,7 @@
 			allScenes['6-dinningarea'].scene,
 			{ yaw: 3.0012705088798945, pitch: -0.1323999802654079 },
 			allScenes['7-poojaroom'].scene,
-			'PoojaRoom',
+			'Puja Room',
 			'7-poojaroom'
 		);
 
@@ -1248,7 +1248,7 @@
 			allScenes['7-poojaroom'].scene,
 			{ yaw: -1.44032862581615, pitch: -0.08868807714291727 },
 			allScenes['6-dinningarea'].scene,
-			'DinningArea',
+			'Dining Area',
 			'6-dinningarea'
 		);
 
@@ -1264,7 +1264,7 @@
 			allScenes['7-poojaroom'].scene,
 			{ yaw: -0.04811151904334032, pitch: -0.07043748447571296 },
 			allScenes['8-family5bhk'].scene,
-			'Family',
+			'Family Lounge',
 			'8-family5bhk'
 		);
 
@@ -1272,7 +1272,7 @@
 			allScenes['8-family5bhk'].scene,
 			{ yaw: -1.218754241417173, pitch: -0.009381592342776912 },
 			allScenes['16-kidsroom'].scene,
-			'KidsRoom',
+			'Kids Room',
 			'16-kidsroom'
 		);
 
@@ -1296,7 +1296,7 @@
 			allScenes['8-family5bhk'].scene,
 			{ yaw: 1.2175251415944324, pitch: -0.09157035854783757 },
 			allScenes['18-guestroom2_5bhk'].scene,
-			'GuestRoom2',
+			'Guest Room 2',
 			'18-guestroom2_5bhk'
 		);
 
@@ -1312,7 +1312,7 @@
 			allScenes['9-flexroom'].scene,
 			{ yaw: -0.9472423311666418, pitch: -0.09813264120863963 },
 			allScenes['10-masterbedroom'].scene,
-			'MasterBedRoom',
+			'Master BedRoom',
 			'10-masterbedroom'
 		);
 
@@ -1320,7 +1320,7 @@
 			allScenes['10-masterbedroom'].scene,
 			{ yaw: -2.4712653239474314, pitch: 0.0050272185803983405 },
 			allScenes['12-masterwashroom'].scene,
-			'MasterWashRoom',
+			'Master WashRoom',
 			'12-masterwashroom'
 		);
 
@@ -1336,7 +1336,7 @@
 			allScenes['11-masterwardrobe'].scene,
 			{ yaw: 3.138231569553078, pitch: -0.0010259855879866109 },
 			allScenes['10-masterbedroom'].scene,
-			'MasterBedRoom',
+			'Master BedRoom',
 			'10-masterbedroom'
 		);
 
@@ -1352,7 +1352,7 @@
 			allScenes['12-masterwashroom'].scene,
 			{ yaw: 1.4168632191635666, pitch: -0.35412006025275744 },
 			allScenes['10-masterbedroom'].scene,
-			'MasterBedRoom',
+			'Master BedRoom',
 			'10-masterbedroom'
 		);
 
@@ -1368,7 +1368,7 @@
 			allScenes['13-guestroom1'].scene,
 			{ yaw: -0.39781599444700433, pitch: -0.07772555734579356 },
 			allScenes['14-guestwardrobe1'].scene,
-			'GuestWardrobe1',
+			'Wardrobe 1',
 			'14-guestwardrobe1'
 		);
 
@@ -1384,7 +1384,7 @@
 			allScenes['14-guestwardrobe1'].scene,
 			{ yaw: 3.0975542266913294, pitch: 0.15970723959839717 },
 			allScenes['13-guestroom1'].scene,
-			'GuestRoom1',
+			'Guest Room 1',
 			'13-guestroom1'
 		);
 
@@ -1400,7 +1400,7 @@
 			allScenes['15-5bhkguestwashroom1'].scene,
 			{ yaw: 2.836800690047051, pitch: -0.13144704116685801 },
 			allScenes['13-guestroom1'].scene,
-			'GuestRoom1',
+			'Guest Room 1',
 			'13-guestroom1'
 		);
 
@@ -1416,7 +1416,7 @@
 			allScenes['16-kidsroom'].scene,
 			{ yaw: 1.730240955858375, pitch: -0.017372984704017824 },
 			allScenes['8-family5bhk'].scene,
-			'Family',
+			'Family Lounge',
 			'8-family5bhk'
 		);
 
@@ -1432,7 +1432,7 @@
 			allScenes['16-kidsroom'].scene,
 			{ yaw: 2.5455739908571555, pitch: 0.02895297234681493 },
 			allScenes['17-kidswashroom'].scene,
-			'KidsWashRoom',
+			'Kids WashRoom',
 			'17-kidswashroom'
 		);
 
@@ -1440,7 +1440,7 @@
 			allScenes['17-kidswashroom'].scene,
 			{ yaw: -1.7101788106406595, pitch: -0.22349881433484242 },
 			allScenes['16-kidsroom'].scene,
-			'KidsRoom',
+			'Kids Room',
 			'16-kidsroom'
 		);
 
@@ -1456,7 +1456,7 @@
 			allScenes['18-guestroom2_5bhk'].scene,
 			{ yaw: -2.3125422245193477, pitch: 0.05415313236590258 },
 			allScenes['19-guestwardrobe2'].scene,
-			'Guest Wardrobe',
+			'Wardrobe',
 			'19-guestwardrobe2'
 		);
 
@@ -1472,7 +1472,7 @@
 			allScenes['18-guestroom2_5bhk'].scene,
 			{ yaw: -1.8316735177878378, pitch: -0.04187900457774241 },
 			allScenes['8-family5bhk'].scene,
-			'Family',
+			'Family Lounge',
 			'8-family5bhk'
 		);
 
@@ -1504,7 +1504,7 @@
 			allScenes['21-5bhkcommon-washroom'].scene,
 			{ yaw: 1.2526531457288979, pitch: -0.0036298478973897375 },
 			allScenes['8-family5bhk'].scene,
-			'Family',
+			'Family Lounge',
 			'8-family5bhk'
 		);
 
@@ -1791,7 +1791,7 @@
 								<Accordion.Trigger id="grolevel-fx">Top Level</Accordion.Trigger>
 							</Accordion.Item>
 							{#if $currentbhk === '4bhk'}
-								{#each [{ id: '1-livingroom', label: 'Living Room' }, { id: '4-kitchen4bhk', label: 'Kitchen' }, { id: '7-masterbed4bhkph', label: 'Master Bedroom' }, { id: '9-masterwashroom', label: 'Masterbed Washroom' }, { id: '18-commonwashroom', label: 'Common Washroom' }, { id: '10-guestroom014bhk', label: 'Guest Room' }, { id: '12-guestwashroom1', label: 'Guestbed Washroom' }, { id: '13-kidroom', label: 'Kids Room' }, { id: '14-kidswashroom', label: 'Kids Washroom' }, { id: '2-deck', label: 'Deck' }, { id: '3-dinning', label: 'Dining Area' }] as scene}
+								{#each [{ id: '0-foyer', label: 'Foyer' }, { id: '1-livingroom', label: 'Living Room' }, { id: '2-deck', label: 'Deck' }, { id: '3-dinning', label: 'Dining Area' }, { id: '4-kitchen4bhk', label: 'Kitchen' }, { id: '5-utility4bhk', label: 'Utility' }, { id: '6-family', label: 'Family Lounge' }, { id: '7-masterbed4bhkph', label: 'Master Bedroom' }, { id: '8-masterwardrobe', label: 'Master Wardrobe' }, { id: '9-masterwashroom', label: 'Master Washroom' }, { id: '10-guestroom014bhk', label: 'Guest Room 1' }, { id: '11-guestwardrobe1', label: 'Wardrobe 1' }, { id: '12-guestwashroom1', label: 'Guest Washroom 1' }, { id: '13-kidroom', label: 'Kids Room' }, { id: '14-kidswashroom', label: 'Kids Washroom' }, { id: '15-guestroom2', label: 'Guest Room 2' }, { id: '16-guestwardrobe2', label: 'Wardrobe 2' }, { id: '17-guestwashroom2', label: 'Guest Washroom 2' }, { id: '18-commonwashroom', label: 'Common Washroom' }] as scene}
 									<button
 										class={$hotspotName == scene.id ? 'active inner-modal-btn' : 'inner-modal-btn'}
 										id={'am-' + scene.id}
@@ -1804,7 +1804,7 @@
 								{/each}
 							{/if}
 							{#if $currentbhk === '5bhk'}
-								{#each [{ id: '1-living-room5bhk', label: 'Living Room' }, { id: '4-kitchen', label: 'Kitchen' }, { id: '10-masterbedroom', label: 'Master Bedroom' }, { id: '12-masterwashroom', label: 'Masterbed Washroom' }, { id: '13-guestroom1', label: 'Guest Bedroom 1' }, { id: '14-guestwardrobe1', label: 'Guest Wardrobe 1' }, { id: '15-5bhkguestwashroom1', label: 'Guestbed Washroom 1' }, { id: '18-guestroom2_5bhk', label: 'Guest Bedroom 2' }, { id: '19-guestwardrobe2', label: 'Guest Wardrobe2' }, { id: '20-guestwashroom2', label: 'Guestbed Washroom 2' }, { id: '16-kidsroom', label: 'Kids Room' }, { id: '17-kidswashroom', label: 'Kids Washroom' }, { id: '3-deck5bhk', label: 'Deck' }, { id: '6-dinningarea', label: 'Dining Area' }, { id: '21-5bhkcommon-washroom', label: 'Common Washroom' }] as scene}
+								{#each [{ id: '0-foyer5bhk', label: 'Foyer' }, { id: '1-living-room5bhk', label: 'Living Room' }, { id: '2-seatinglounge', label: 'Seating Lounge' }, { id: '3-deck5bhk', label: 'Deck' }, { id: '4-kitchen', label: 'Kitchen' }, { id: '5-utility5bhk', label: 'Utility' }, { id: '6-dinningarea', label: 'Dining Area' }, { id: '7-poojaroom', label: 'Puja Room' }, { id: '8-family5bhk', label: 'Family Lounge' }, { id: '9-flexroom', label: 'Flex Room' }, { id: '10-masterbedroom', label: 'Master Bedroom' }, { id: '11-masterwardrobe', label: 'Master Wardrobe' }, { id: '12-masterwashroom', label: 'Master Washroom' }, { id: '13-guestroom1', label: 'Guest Room 1' }, { id: '14-guestwardrobe1', label: 'Wardrobe 1' }, { id: '15-5bhkguestwashroom1', label: 'Guest Washroom 1' }, { id: '16-kidsroom', label: 'Kids Room' }, { id: '17-kidswashroom', label: 'Kids Washroom' }, { id: '18-guestroom2_5bhk', label: 'Guest Room 2' }, { id: '19-guestwardrobe2', label: 'Wardrobe 2' }, { id: '20-guestwashroom2', label: 'Guest Washroom 2' }, { id: '21-5bhkcommon-washroom', label: 'Common Washroom' }] as scene}
 									<button
 										class={$hotspotName == scene.id
 											? 'active inner-modal-btn '

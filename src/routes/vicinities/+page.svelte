@@ -33,6 +33,8 @@
 
 		console.log('sss');
 	});
+
+	const isDay = writable();
 </script>
 
 <div class="left-panel-wrapper">
@@ -178,7 +180,7 @@
 
 <div class={'d-block visible absolute bottom-0 left-0 right-0 top-0'}>
 	<div
-		class={`cloudimage-360  vicinity-box visible !absolute z-50`}
+		class={`cloudimage-360  vicinity-box z-50 ${$vicinityImg != '-' ? 'invisible !absolute' : 'visible !absolute'}`}
 		data-folder="https://assets.vestate.io/kalpataru-one/vicinity/"
 		data-filename="{'vic{'}index{'}'}.webp"
 		data-amount="24"

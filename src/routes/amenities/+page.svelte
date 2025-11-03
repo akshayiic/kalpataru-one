@@ -1578,8 +1578,8 @@
 				}
 			],
 			{
-				yaw: -1.5828077436556995,
-				pitch: -0.02578682189706427,
+				yaw: -2.0270564913932176,
+				pitch: -0.06933757300159726,
 				fov: 1.5552936603672898
 			}
 		);
@@ -1793,7 +1793,7 @@
 			allScenes['0-cozy-lounge-deck-tower-a'].scene,
 			{ yaw: 2.998623718874051, pitch: 0.4552501065285455 },
 			allScenes['6-chillout-deck-tower-b'].scene,
-			'Chillout Deck Tower B',
+			'Chill Out Deck Tower B',
 			'6-chillout-deck-tower-b'
 		);
 
@@ -1801,7 +1801,7 @@
 			allScenes['0-cozy-lounge-deck-tower-a'].scene,
 			{ yaw: 2.1741902712875483, pitch: 0.4963232932167081 },
 			allScenes['10-chillout-deck-tower-c'].scene,
-			'Chillout Deck Tower C',
+			'Chill Out Deck Tower C',
 			'10-chillout-deck-tower-c'
 		);
 
@@ -1818,7 +1818,7 @@
 			allScenes['1-sky-lounge-room-1-tower-a'].scene,
 			{ yaw: -2.9835315629191843, pitch: 0.10906783226639583 },
 			allScenes['6-chillout-deck-tower-b'].scene,
-			'Chillout Deck Tower B',
+			'Chill Out Deck Tower B',
 			'6-chillout-deck-tower-b'
 		);
 
@@ -1826,7 +1826,7 @@
 			allScenes['1-sky-lounge-room-1-tower-a'].scene,
 			{ yaw: 3.076531495949295, pitch: 0.1059073624805329 },
 			allScenes['10-chillout-deck-tower-c'].scene,
-			'Chillout Deck Tower C',
+			'Chill Out Deck Tower C',
 			'10-chillout-deck-tower-c'
 		);
 
@@ -1851,7 +1851,7 @@
 			allScenes['2-sky-lounge-room-2-tower-a'].scene,
 			{ yaw: 2.483527263479825, pitch: 0.26098414549466753 },
 			allScenes['10-chillout-deck-tower-c'].scene,
-			'Chillout Deck Tower C',
+			'Chill Out Deck Tower C',
 			'10-chillout-deck-tower-c'
 		);
 
@@ -1893,7 +1893,7 @@
 			allScenes['4-chillout-lawn-tower-a'].scene,
 			{ yaw: 0.46625375583662176, pitch: -0.006390223917099647 },
 			allScenes['6-chillout-deck-tower-b'].scene,
-			'Chillout Deck Tower B',
+			'Chill Out Deck Tower B',
 			'6-chillout-deck-tower-b'
 		);
 
@@ -1901,7 +1901,7 @@
 			allScenes['4-chillout-lawn-tower-a'].scene,
 			{ yaw: 0.7318513353194351, pitch: -0.01561630195647723 },
 			allScenes['10-chillout-deck-tower-c'].scene,
-			'Chillout Deck Tower C',
+			'Chill Out Deck Tower C',
 			'10-chillout-deck-tower-c'
 		);
 
@@ -1918,7 +1918,7 @@
 			allScenes['5-seating-planters-tower-b'].scene,
 			{ yaw: -2.1839388587900643, pitch: -0.4927979442542796 },
 			allScenes['6-chillout-deck-tower-b'].scene,
-			'Chillout Deck Tower B',
+			'Chill Out Deck Tower B',
 			'6-chillout-deck-tower-b'
 		);
 
@@ -1952,7 +1952,7 @@
 			allScenes['7-lap-pool-tower-b'].scene,
 			{ yaw: 1.101818616459198, pitch: 0.021645343840258846 },
 			allScenes['6-chillout-deck-tower-b'].scene,
-			'Chillout Deck Tower B',
+			'Chill Out Deck Tower B',
 			'6-chillout-deck-tower-b'
 		);
 
@@ -1993,7 +1993,7 @@
 			allScenes['8-social-deck-tower-b'].scene,
 			{ yaw: 1.121037209071602, pitch: -0.014433011190217115 },
 			allScenes['6-chillout-deck-tower-b'].scene,
-			'Chillout Deck Tower B',
+			'Chill Out Deck Tower B',
 			'6-chillout-deck-tower-b'
 		);
 
@@ -2018,7 +2018,7 @@
 			allScenes['9-lap-pool-tower-c'].scene,
 			{ yaw: -2.0701110974594634, pitch: -0.03156503693467627 },
 			allScenes['10-chillout-deck-tower-c'].scene,
-			'Chillout Deck Tower C',
+			'Chill Out Deck Tower C',
 			'10-chillout-deck-tower-c'
 		);
 
@@ -2052,7 +2052,7 @@
 			allScenes['11-pool-loungers-tower-c'].scene,
 			{ yaw: -2.3543708707655515, pitch: -0.08333062055995555 },
 			allScenes['10-chillout-deck-tower-c'].scene,
-			'Chillout Deck Tower C',
+			'Chill Out Deck Tower C',
 			'10-chillout-deck-tower-c'
 		);
 
@@ -2373,14 +2373,13 @@
 			'2-juice-bar'
 		);
 
-		createHotspot(
-			allScenes['1-gymnasium-cardio'].scene,
-			{ yaw: 0.7456528955546169, pitch: 0.06886501669264966 },
-			allScenes['4-indoor-kids-play-area'].scene,
-			'Indoor Kids',
-			'Play Area',
-			'4-indoor-kids-play-area'
-		);
+		// createHotspot(
+		// 	allScenes['1-gymnasium-cardio'].scene,
+		// 	{ yaw: 0.7456528955546169, pitch: 0.06886501669264966 },
+		// 	allScenes['4-indoor-kids-play-area'].scene,
+		// 	`Indoor Kids' Play Area`,
+		// 	'4-indoor-kids-play-area'
+		// );
 
 		// 2-juice-bar hotspots
 		createHotspot(
@@ -2445,8 +2444,7 @@
 			allScenes['4-indoor-kids-play-area'].scene,
 			{ yaw: -0.5417735697141097, pitch: 0.10527445344299124 },
 			allScenes['17-kids-play-zone'].scene,
-			'Kids',
-			'Play Zone',
+			`Kids' Play Zone`,
 			'17-kids-play-zone'
 		);
 
@@ -2479,8 +2477,7 @@
 			allScenes['5-salon'].scene,
 			{ yaw: 3.094146340819888, pitch: -0.006105246193559566 },
 			allScenes['17-kids-play-zone'].scene,
-			'Kids',
-			'Play Zone',
+			`Kids' Play Zone`,
 			'17-kids-play-zone'
 		);
 
@@ -2488,14 +2485,6 @@
 		createHotspot(
 			allScenes['6-mini-theatre'].scene,
 			{ yaw: 1.363322915255134, pitch: -0.08393040772180527 },
-			allScenes['13-landscape-garden'].scene,
-			'Landscape Garden',
-			'13-landscape-garden'
-		);
-
-		createHotspot(
-			allScenes['6-mini-theatre'].scene,
-			{ yaw: 1.8761911449836983, pitch: -0.15391799328839184 },
 			allScenes['13-landscape-garden'].scene,
 			'Landscape Garden',
 			'13-landscape-garden'
@@ -2564,8 +2553,7 @@
 			allScenes['9-family-pavilion'].scene,
 			{ yaw: -2.450261026234692, pitch: 0.245751761153727 },
 			allScenes['11-kids-pool'].scene,
-			'Kids',
-			'Pool',
+			`Kids' Pool`,
 			'11-kids-pool'
 		);
 
@@ -2614,8 +2602,7 @@
 			allScenes['10-fitness-corner'].scene,
 			{ yaw: -2.7507537183902464, pitch: -0.022309706003500906 },
 			allScenes['17-kids-play-zone'].scene,
-			'Kids',
-			'Play Zone',
+			`Kids' Play Zone`,
 			'17-kids-play-zone'
 		);
 
@@ -2673,8 +2660,7 @@
 			allScenes['12-lap-pool'].scene,
 			{ yaw: 0.6317049432481419, pitch: 0.05832382998934271 },
 			allScenes['11-kids-pool'].scene,
-			'Kids',
-			'Pool',
+			`Kids' Pool`,
 			'11-kids-pool'
 		);
 
@@ -2698,8 +2684,7 @@
 			allScenes['12-lap-pool'].scene,
 			{ yaw: 0.2872702866164101, pitch: -0.048171657634984655 },
 			allScenes['17-kids-play-zone'].scene,
-			'Kids',
-			'Play Zone',
+			`Kids' Play Zone`,
 			'17-kids-play-zone'
 		);
 
@@ -2724,8 +2709,7 @@
 			allScenes['13-landscape-garden'].scene,
 			{ yaw: -0.9502734899066034, pitch: 0.02975977681205677 },
 			allScenes['11-kids-pool'].scene,
-			'Kids',
-			'Pool',
+			`Kids' Pool`,
 			'11-kids-pool'
 		);
 
@@ -2766,8 +2750,7 @@
 			allScenes['14-multipurpose-lawn'].scene,
 			{ yaw: 0.5427504284366247, pitch: -0.07319203767604066 },
 			allScenes['4-indoor-kids-play-area'].scene,
-			'Indoor Kids',
-			' Play Area',
+			`Indoor Kids' Play Area`,
 			'4-indoor-kids-play-area'
 		);
 
@@ -2776,8 +2759,7 @@
 			allScenes['15-spa-pod'].scene,
 			{ yaw: 0.8620907479063931, pitch: 0.017277743195446504 },
 			allScenes['11-kids-pool'].scene,
-			'Kids',
-			'Pool',
+			`Kids' Pool`,
 			'11-kids-pool'
 		);
 
@@ -3134,8 +3116,7 @@
 			allScenes['8-garden-pavillion'].scene,
 			{ yaw: -0.7261601655166992, pitch: -0.1288032160413657 },
 			allScenes['9-kids-play-area'].scene,
-			'Kids',
-			'Play Area',
+			`Kids' Play Area`,
 			'9-kids-play-area'
 		);
 
@@ -3193,8 +3174,7 @@
 			allScenes['10-box-cricket'].scene,
 			{ yaw: 0.23841312470420561, pitch: -0.0021273034142730296 },
 			allScenes['9-kids-play-area'].scene,
-			'Kids',
-			'Play Area',
+			`Kids' Play Area`,
 			'9-kids-play-area'
 		);
 
@@ -3487,7 +3467,7 @@
 							<Accordion.Item value="item-12" class="">
 								<Accordion.Trigger id="grolevel-fx">Ground Floor</Accordion.Trigger>
 								<Accordion.Content>
-									{#each [{ id: '0-entrance-1', label: 'Entrance 1' }, { id: '1-entrance-2', label: 'Entrance 2' }, { id: '2-entrance-3', label: 'Entrance 3' }, { id: '3-drop-off', label: 'Drop - Off' }, { id: '4-entrance-lobby', label: 'Entrance Lobby' }, { id: '5-lift-lobby', label: 'Lift Lobby' }, { id: '6-convinience-store', label: 'Convenience Store' }, { id: '7-jogging-path', label: 'Jogging Path' }, { id: '12-jogging-track---500m', label: 'Jogging Path - 500m' }, { id: '8-garden-pavillion', label: 'Garden Pavilion' }, { id: '9-kids-play-area', label: "Kids' Play Area" }, { id: '10-box-cricket', label: 'Box Cricket' }, { id: '11-social-pods', label: 'Social Pods' }, { id: '15-pet-run', label: 'Pet Run' }, { id: '13-banquet-drop-off', label: 'Banquet Drop - Off 1' }, { id: '14-banquet-hall', label: 'Banquet Hall' }] as scene}
+									{#each [{ id: '0-entrance-1', label: 'Entrance 1' }, { id: '1-entrance-2', label: 'Entrance 2' }, { id: '2-entrance-3', label: 'Entrance 3' }, { id: '3-drop-off', label: 'Drop - Off' }, { id: '4-entrance-lobby', label: 'Entrance Lobby' }, { id: '5-lift-lobby', label: 'Lift Lobby' }, { id: '6-convinience-store', label: 'Convenience Store' }, { id: '7-jogging-path', label: 'Jogging Path' }, { id: '12-jogging-track---500m', label: 'Jogging Path - 500m' }, { id: '8-garden-pavillion', label: 'Garden Pavilion' }, { id: '9-kids-play-area', label: "Kids' Play Area" }, { id: '10-box-cricket', label: 'Box Cricket' }, { id: '11-social-pods', label: 'Social Pods' }, { id: '15-pet-run', label: 'Pet Run' }, { id: '13-banquet-drop-off', label: 'Banquet Drop Off' }, { id: '14-banquet-hall', label: 'Banquet Hall' }] as scene}
 										<button
 											class={$hotspotName == scene.id
 												? 'active inner-modal-btn '
