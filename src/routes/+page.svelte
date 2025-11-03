@@ -130,7 +130,7 @@
 					}}
 					class="bg-all-none !w-fit p-0"
 				>
-					<img id="v-start-img" style="width: 100px;" src="/start-btn.png" alt="" />
+					<img id="v-start-img" style="width: 100px;" src="/startbtn.png" alt="" />
 				</button>
 
 				<div class="title text-2xl">virtual tour experience</div>
