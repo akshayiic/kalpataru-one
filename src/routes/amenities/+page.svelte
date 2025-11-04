@@ -1,5 +1,5 @@
 <script>
-	import { getContext, onDestroy } from 'svelte';
+	import { afterUpdate, getContext, onDestroy, tick } from 'svelte';
 	import * as Accordion from '$lib/components/ui/accordion/index.ts';
 	import minimizeBtn from '$lib/images/minimize-icon.svg';
 	import maximizeBtn from '$lib/images/maximize-icon.svg';
@@ -24,6 +24,9 @@
 	setContext('isAmenitiesMinimized', isAmenitiesMinimized);
 	$: isAmenitiesMinimized.set(isSafariMobile ? true : false);
 	$ishighlights = false;
+
+	let innerGroup;
+
 	onMount(async () => {
 		$hotspotName = '0-entrance-1';
 
@@ -3418,13 +3421,6 @@
 	onDestroy(() => {
 		if (unsubscribeHotSpot) unsubscribeHotSpot();
 	});
-
-	function handleAccordionChange(event) {
-		const value = event?.detail?.value;
-		if (!value) return;
-		const el = document.getElementById(value);
-		el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-	}
 </script>
 
 {#if !$ishighlights}
@@ -3469,16 +3465,20 @@
 
 			<div class={!$isAmenitiesMinimized ? 'block' : 'hidden'}>
 				<div class="pt-3">
-					<div class="inner-btn-group">
-						<Accordion.Root class="w-full sm:max-w-full">
-							<Accordion.Item value="item-12" class="">
-								<Accordion.Trigger id="grolevel-fx">Ground Floor</Accordion.Trigger>
+					<div class="inner-btn-group" bind:this={innerGroup}>
+						<Accordion.Root type="single" collapsible class="w-full sm:max-w-full">
+							<Accordion.Item value="item-12">
+								<Accordion.Trigger
+									on:click={() => {
+										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
+									}}>Ground Floor</Accordion.Trigger
+								>
 								<Accordion.Content>
 									{#each [{ id: '0-entrance-1', label: 'Entrance 1' }, { id: '1-entrance-2', label: 'Entrance 2' }, { id: '2-entrance-3', label: 'Entrance 3' }, { id: '3-drop-off', label: 'Drop - Off' }, { id: '4-entrance-lobby', label: 'Entrance Lobby' }, { id: '5-lift-lobby', label: 'Lift Lobby' }, { id: '6-convinience-store', label: 'Convenience Store' }, { id: '7-jogging-path', label: 'Jogging Path' }, { id: '12-jogging-track---500m', label: 'Jogging Path - 500m' }, { id: '8-garden-pavillion', label: 'Garden Pavilion' }, { id: '9-kids-play-area', label: "Kids' Play Area" }, { id: '10-box-cricket', label: 'Box Cricket' }, { id: '11-social-pods', label: 'Social Pods' }, { id: '15-pet-run', label: 'Pet Run' }, { id: '13-banquet-drop-off', label: 'Banquet Drop Off' }, { id: '14-banquet-hall', label: 'Banquet Hall' }] as scene}
 										<button
 											class={$hotspotName == scene.id
-												? 'active inner-modal-btn '
-												: 'inner-modal-btn '}
+												? 'active inner-modal-btn'
+												: 'inner-modal-btn'}
 											id={'am-' + scene.id}
 											on:click={() => ($hotspotName = scene.id)}
 										>
@@ -3487,14 +3487,19 @@
 									{/each}
 								</Accordion.Content>
 							</Accordion.Item>
-							<Accordion.Item value="item-13" class="">
-								<Accordion.Trigger id="podium">Podium (P4 & P6)</Accordion.Trigger>
+
+							<Accordion.Item value="item-13">
+								<Accordion.Trigger
+									on:click={() => {
+										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
+									}}>Podium (P4 & P6)</Accordion.Trigger
+								>
 								<Accordion.Content>
 									{#each [{ id: '6-squash-court', label: 'Squash Court' }, { id: '2-games-room', label: 'Games Room' }, { id: '8-womens-spa', label: "Women's Spa" }, { id: '5-mens-spa', label: "Men's Spa" }, { id: '4-jacuzzi-lounge', label: 'Jacuzzi Lounge' }, { id: '7-yoga-area', label: 'Yoga Area' }, { id: '1-cards-room', label: 'Cards Room' }, { id: '3-gymnasium---weights', label: 'Gymnasium - Weights' }] as scene}
 										<button
 											class={$hotspotName == scene.id
-												? 'active inner-modal-btn '
-												: 'inner-modal-btn '}
+												? 'active inner-modal-btn'
+												: 'inner-modal-btn'}
 											id={'am-' + scene.id}
 											on:click={() => ($hotspotName = scene.id)}
 										>
@@ -3503,8 +3508,14 @@
 									{/each}
 								</Accordion.Content>
 							</Accordion.Item>
+
 							<Accordion.Item value="item-14" class=" ">
-								<Accordion.Trigger id="clubhouse">Clubhouse</Accordion.Trigger>
+								<Accordion.Trigger
+									id="clubhouse"
+									on:click={() => {
+										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
+									}}>Clubhouse</Accordion.Trigger
+								>
 								<Accordion.Content>
 									{#each [{ id: '2-juice-bar', label: 'Juice Bar' }, { id: '1-gymnasium-cardio', label: 'Gymnasium - Cardio' }, { id: '0-activity-room', label: 'Activity Room' }] as scene}
 										<button
@@ -3521,7 +3532,12 @@
 							</Accordion.Item>
 
 							<Accordion.Item value="item-15" class=" ">
-								<Accordion.Trigger id="eco-level">Eco Deck Level</Accordion.Trigger>
+								<Accordion.Trigger
+									id="eco-level"
+									on:click={() => {
+										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
+									}}>Eco Deck Level</Accordion.Trigger
+								>
 								<Accordion.Content>
 									{#each [{ id: '12-lap-pool', label: 'Lap Pool' }, { id: '7-aqua-deck', label: 'Aqua Deck' }, { id: '15-spa-pod', label: 'Spa Pods' }, { id: '11-kids-pool', label: "Kids' Pool" }, { id: '9-family-pavilion', label: 'Family Pavilion' }, { id: '13-landscape-garden', label: 'Landscape Gardens' }, { id: '16-walking-track', label: 'Walking Track' }, { id: '8-event-deck-lawn', label: 'Event Deck & Lawn' }, { id: '14-multipurpose-lawn', label: 'Multipurpose Lawn' }, { id: '18-social-pods', label: 'Social Pods' }, { id: '10-fitness-corner', label: 'Fitness Corner' }, { id: '17-kids-play-zone', label: "Kids' Play Zone" }] as scene}
 										<button
@@ -3538,7 +3554,12 @@
 							</Accordion.Item>
 
 							<Accordion.Item value="item-16" class=" ">
-								<Accordion.Trigger id="podium-stilt">Podium Stilt</Accordion.Trigger>
+								<Accordion.Trigger
+									id="podium-stilt"
+									on:click={() => {
+										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
+									}}>Podium Stilt</Accordion.Trigger
+								>
 								<Accordion.Content>
 									{#each [{ id: '4-indoor-kids-play-area', label: "Indoor Kids' Play Area" }, { id: '5-salon', label: 'Salon' }, { id: '6-mini-theatre', label: 'Mini Theatre' }, { id: '3-business-centre', label: 'Business Centre' }] as scene}
 										<button
@@ -3555,7 +3576,12 @@
 							</Accordion.Item>
 
 							<Accordion.Item value="item-17" class=" ">
-								<Accordion.Trigger id="sky-level">Sky Level</Accordion.Trigger>
+								<Accordion.Trigger
+									id="sky-level"
+									on:click={() => {
+										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
+									}}>Sky Level</Accordion.Trigger
+								>
 								<Accordion.Content>
 									{#each [{ id: '4-chillout-lawn-tower-a', label: 'Chill Out Lawn Tower A' }, { id: '3-lap-pool-tower-a', label: 'Lap Pool Tower A' }, { id: '0-cozy-lounge-deck-tower-a', label: 'Cozy Lounge Deck Tower A' }, { id: '1-sky-lounge-room-1-tower-a', label: 'Sky Lounge Room 1 Tower A' }, { id: '2-sky-lounge-room-2-tower-a', label: 'Sky Lounge Room 2 Tower A' }, { id: '5-seating-planters-tower-b', label: 'Seating Planters Tower B' }, { id: '6-chillout-deck-tower-b', label: 'Chill Out Deck Tower B' }, { id: '7-lap-pool-tower-b', label: 'Lap Pool Tower B' }, { id: '8-social-deck-tower-b', label: 'Social Deck Tower B' }, { id: '12-lookout-deck-tower-c', label: 'Lookout Deck Tower C' }, { id: '11-pool-loungers-tower-c', label: 'Pool Loungers Tower C' }, { id: '9-lap-pool-tower-c', label: 'Lap Pool Tower C' }, { id: '10-chillout-deck-tower-c', label: 'Chill Out Deck Tower C' }] as scene}
 										<button

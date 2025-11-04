@@ -12,6 +12,9 @@
 	font-family: 'History Pro', sans-serif;
 }
 
+body {
+	height: 100vh;
+}
 
 #pano {
 	height: 100dvh;
@@ -590,6 +593,10 @@ button {
 			gap: 0.2rem;
 		}
 
+		.safari-btn {
+			margin-top: -1rem !important;
+		}
+
 
 
 		svg {
@@ -814,12 +821,12 @@ button {
 			left: 0;
 		}
 
-		.safari-btn {
+		/* .safari-btn {
 			position: fixed !important;
 			top: 35%;
 			left: 8%;
 			gap: 0.2rem;
-		}
+		} */
 
 
 	}
@@ -887,12 +894,7 @@ button {
 		}
 
 		.safari-btn {
-			position: fixed !important;
-			top: 35%;
-			left: 8%;
-			gap: 0.2rem;
-			z-index: 10000;
-			font-size: 0.9rem;
+			margin-bottom: 1rem !important;
 		}
 
 		.safari-btn img {

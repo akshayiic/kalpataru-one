@@ -167,6 +167,22 @@
 	});
 
 	function ensureFullscreen() {
+		// Only apply fullscreen for mobile devices
+		const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+			navigator.userAgent
+		);
+		const isTablet =
+			/iPad/i.test(navigator.userAgent) ||
+			(navigator.userAgent.includes('Mac') && 'ontouchend' in document);
+
+		// Check if screen width is mobile/tablet size (less than 1024px)
+		const isMobileScreen = window.innerWidth < 1024;
+
+		// Only proceed if it's a mobile device or mobile screen size
+		if (!isMobile && !isTablet && !isMobileScreen) {
+			return; // Exit for desktop/larger screens
+		}
+
 		const isIOS = /iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 		const isLandscape = window.matchMedia('(orientation: landscape)').matches;
 		const docEl = document.documentElement;
@@ -180,10 +196,15 @@
 				});
 			}
 		} else {
-			// Android, iPad (desktop mode), or desktop browsers → real fullscreen
+			// Android, iPad (desktop mode), or mobile browsers → real fullscreen
 			if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-				if (docEl.requestFullscreen) docEl.requestFullscreen();
-				else if (docEl.webkitRequestFullscreen) docEl.webkitRequestFullscreen();
+				if (docEl.requestFullscreen) {
+					docEl.requestFullscreen().catch((err) => {
+						console.log('Fullscreen request failed:', err);
+					});
+				} else if (docEl.webkitRequestFullscreen) {
+					docEl.webkitRequestFullscreen();
+				}
 			}
 		}
 	}

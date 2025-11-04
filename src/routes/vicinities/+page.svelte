@@ -26,6 +26,9 @@
 	let vicinityImg = getContext('vicinityImg');
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
+
+	let innerGroup;
+
 	onMount(async () => {
 		if (!document.querySelector('.vicinity-box').id) {
 			window.CI360.init();
@@ -81,14 +84,20 @@
 			transition:slide={{ duration: 100, axis: 'y' }}
 		>
 			<div class="no-hovers pt-3">
-				<div class="inner-btn-group">
+				<div class="inner-btn-group" bind:this={innerGroup}>
 					<Accordion.Root class="w-full sm:max-w-full">
 						<Accordion.Item class="hidden" value="item-1wqweqweqweqwe">
 							<Accordion.Trigger id="station-level-ss" class="hidden">asdasdasd</Accordion.Trigger>
 						</Accordion.Item>
 
 						<Accordion.Item value="connectivity">
-							<Accordion.Trigger id="connectivity-level" class="acc-label">
+							<Accordion.Trigger
+								id="connectivity-level"
+								class="acc-label"
+								on:click={() => {
+									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
+								}}
+							>
 								Connectivity
 							</Accordion.Trigger>
 							<Accordion.Content>
@@ -105,8 +114,16 @@
 						</Accordion.Item>
 
 						<Accordion.Item value="shopping">
-							<Accordion.Trigger id="shopping-level" class="acc-label">
-								Shopping & Entertainment
+							<Accordion.Trigger
+								id="shopping-level"
+								class="acc-label flex w-full items-center justify-between gap-2 text-left"
+								on:click={() => {
+									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
+								}}
+							>
+								<span class="max-w-[85%] truncate" title="Shopping & Entertainment"
+									>Shopping & Entertainment</span
+								>
 							</Accordion.Trigger>
 							<Accordion.Content>
 								{#each [{ id: 'Four Seasons.webp', label: 'Four Seasons' }, { id: 'Nehru Planetarium.webp', label: 'Nehru Planetarium' }, { id: 'St.Regis.webp', label: 'St.Regis' }, { id: 'Kamala Mills Compound.webp', label: 'Kamala Mills Compound' }, { id: 'Todi Mills Compound.webp', label: 'Todi Mills Compound' }, { id: 'Willingdon Sports Club.webp', label: 'Willingdon Sports Club' }, { id: 'Bombay Gymkhana.webp', label: 'Bombay Gymkhana' }, { id: 'Jio World Drive.webp', label: 'Jio World Drive' }, { id: 'Towards Bay Club.webp', label: 'Towards Bay Club' }] as scene}
@@ -122,8 +139,16 @@
 						</Accordion.Item>
 
 						<Accordion.Item value="education">
-							<Accordion.Trigger id="education-level" class="acc-label">
-								Education Institutes
+							<Accordion.Trigger
+								id="education-level"
+								class="acc-label"
+								on:click={() => {
+									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
+								}}
+							>
+								<span class="max-w-[85%] truncate" title="Education Institutes"
+									>Education Institutes</span
+								>
 							</Accordion.Trigger>
 							<Accordion.Content>
 								{#each [{ id: 'Podar ORT International School.webp', label: 'Podar ORT International School' }, { id: 'Towards Dhirubhai Ambani International School.webp', label: 'Towards Dhirubhai Ambani International School' }, { id: 'Bombay Scottish.webp', label: 'Bombay Scottish' }, { id: 'KGT International School.webp', label: 'KGT International School' }] as scene}
@@ -139,7 +164,13 @@
 						</Accordion.Item>
 
 						<Accordion.Item value="hospitals">
-							<Accordion.Trigger id="hospitals-level" class="acc-label">
+							<Accordion.Trigger
+								id="hospitals-level"
+								class="acc-label"
+								on:click={() => {
+									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
+								}}
+							>
 								Hospitals
 							</Accordion.Trigger>
 							<Accordion.Content>
@@ -156,7 +187,13 @@
 						</Accordion.Item>
 
 						<Accordion.Item value="commercial">
-							<Accordion.Trigger id="commercial-level" class="acc-label">
+							<Accordion.Trigger
+								id="commercial-level"
+								class="acc-label"
+								on:click={() => {
+									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
+								}}
+							>
 								Commercial Hubs
 							</Accordion.Trigger>
 							<Accordion.Content>
