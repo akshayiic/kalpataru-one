@@ -3418,6 +3418,13 @@
 	onDestroy(() => {
 		if (unsubscribeHotSpot) unsubscribeHotSpot();
 	});
+
+	function handleAccordionChange(event) {
+		const value = event?.detail?.value;
+		if (!value) return;
+		const el = document.getElementById(value);
+		el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	}
 </script>
 
 {#if !$ishighlights}

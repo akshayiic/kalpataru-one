@@ -5,7 +5,7 @@
 	import { writable } from 'svelte/store';
 	import '../app.pcss';
 	import './styles.css';
-	import mainLogo from '$lib/images/mainlogo.svg';
+	import mainLogo from '$lib/images/mainlogo.png';
 	const navSlide = writable();
 	setContext('navSlide', navSlide);
 
@@ -91,16 +91,17 @@
 	onMount(() => {
 		switchChecker();
 		console.log('page changed', $page.url);
+
 		if ($page.url.href.includes('brochure')) {
 			show('Brochure');
 			UIPanel.set('Brochure');
-			// CI360.
 		}
 		if ($page.url.href.includes('amenities')) {
 			show('amenities');
 			UIPanel.set('loaded');
 		}
-		// if ($page.url.href.includes('localhost') || true) return;
+
+		// Inject vRetail script
 		const script = document.createElement('script');
 		script.id = 'vretail-script';
 		script.setAttribute('data-vretail-project-id', import.meta.env.VITE_PROJECT_ID);
@@ -109,58 +110,83 @@
 
 		const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-		if (isIOS) {
-			// Trigger auto-fullscreen via scroll
-			const triggerFullscreen = () => {
-				// Small scroll to hide address bar
-				window.scrollTo(0, 1);
-
-				// Scroll back to top after brief delay
-				setTimeout(() => {
-					window.scrollTo(0, 0);
-				}, 100);
-			};
-
-			// Trigger on load
-			setTimeout(triggerFullscreen, 300);
-
-			// Trigger on orientation change
-			window.addEventListener('orientationchange', () => {
-				setTimeout(triggerFullscreen, 500);
-			});
-
-			// Keep UI elements on top
-			const fixUIPositions = () => {
-				const nav = document.querySelector('.nav-wrapper');
-				const leftPanel = document.querySelector('.left-panel-wrapper');
-				const colorMode = document.querySelector('.color-mode-wrapper');
-
-				[nav, leftPanel, colorMode].forEach((el) => {
-					if (el) {
-						el.style.position = 'fixed';
-					}
-				});
-			};
-
-			setTimeout(fixUIPositions, 100);
-		}
-	});
-
-	afterNavigate(() => {
-		const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-		if (!isIOS) return;
-
-		// re-trigger fullscreen & fix positions
-		setTimeout(() => {
+		// --- Helper functions ---
+		const scrollTrickIOS = () => {
 			window.scrollTo(0, 1);
-			setTimeout(() => window.scrollTo(0, 0), 100);
+			setTimeout(() => window.scrollTo(0, 0), 200);
+		};
 
+		const requestFullscreen = () => {
+			const docEl = document.documentElement;
+			if (docEl.requestFullscreen) docEl.requestFullscreen();
+			else if (docEl.webkitRequestFullscreen) docEl.webkitRequestFullscreen();
+		};
+
+		const exitFullscreen = () => {
+			if (document.exitFullscreen) document.exitFullscreen();
+			else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+		};
+
+		const fixUIPositions = () => {
 			['.nav-wrapper', '.left-panel-wrapper', '.color-mode-wrapper'].forEach((sel) => {
 				const el = document.querySelector(sel);
 				if (el) el.style.position = 'fixed';
 			});
+		};
+
+		// --- Initial setup ---
+		setTimeout(() => {
+			if (isIOS) scrollTrickIOS();
+			fixUIPositions();
 		}, 400);
+
+		// --- Orientation change handling ---
+		window.addEventListener('orientationchange', () => {
+			const isLandscape = window.matchMedia('(orientation: landscape)').matches;
+
+			setTimeout(() => {
+				if (isLandscape) {
+					if (!isIOS) {
+						requestFullscreen();
+					} else {
+						scrollTrickIOS();
+						showIOSFullscreenPrompt();
+					}
+				}
+			}, 400);
+		});
 	});
+
+	afterNavigate(() => {
+		if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+			requestAnimationFrame(() => {
+				window.scrollTo(0, 1);
+				setTimeout(() => window.scrollTo(0, 0), 200);
+			});
+		}
+	});
+
+	function ensureFullscreen() {
+		const isIOS = /iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+		const isLandscape = window.matchMedia('(orientation: landscape)').matches;
+		const docEl = document.documentElement;
+
+		if (isIOS) {
+			if (isLandscape) {
+				// iPhone in landscape → simulate fullscreen by hiding browser bars
+				requestAnimationFrame(() => {
+					window.scrollTo(0, 1);
+					setTimeout(() => window.scrollTo(0, 0), 200);
+				});
+			}
+		} else {
+			// Android, iPad (desktop mode), or desktop browsers → real fullscreen
+			if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+				if (docEl.requestFullscreen) docEl.requestFullscreen();
+				else if (docEl.webkitRequestFullscreen) docEl.webkitRequestFullscreen();
+			}
+		}
+	}
 </script>
 
 <div class="app">
@@ -319,6 +345,7 @@
 					<button
 						id="exterior"
 						on:click={() => {
+							ensureFullscreen();
 							show('Exterior');
 							goto('/?panel=overview');
 							UIPanel.set('loaded');
@@ -356,6 +383,7 @@
 							: 'transparent-btn'}
 						id="vicinity"
 						on:click={() => {
+							ensureFullscreen();
 							show('vicinity');
 							UIPanel.set('loaded');
 							vicinityImg.set('-');
@@ -391,6 +419,7 @@
 							: 'transparent-btn'}
 						id="amenities"
 						on:click={() => {
+							ensureFullscreen();
 							show('amenities');
 							UIPanel.set('loaded');
 							hotspotName.set('amenities');
@@ -423,6 +452,7 @@
 							: 'transparent-btn'}
 						id="intcm"
 						on:click={() => {
+							ensureFullscreen();
 							setTimeout(() => {
 								switchChecker();
 								show('interiors');
@@ -493,6 +523,7 @@
 							: 'transparent-btn'}
 						id="vicinity"
 						on:click={() => {
+							ensureFullscreen();
 							show('access');
 							UIPanel.set('loaded');
 							goto('/access');
