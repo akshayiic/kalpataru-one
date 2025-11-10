@@ -1637,7 +1637,7 @@
 		{/if}
 		<button
 			id="start-tour"
-			class="primary-btn safari-btn mx-auto mt-[-1rem]"
+			class="primary-btn safari-btn mx-auto mt-[-1.5rem]"
 			on:click={() => ($startTour = true)}
 		>
 			<img id="startTourImg" src={startTourImg} alt="start tour" />

@@ -93,7 +93,7 @@
 						<Accordion.Item value="connectivity">
 							<Accordion.Trigger
 								id="connectivity-level"
-								class="acc-label"
+								class="acc-label font-bold "
 								on:click={() => {
 									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
 								}}
@@ -116,7 +116,7 @@
 						<Accordion.Item value="shopping">
 							<Accordion.Trigger
 								id="shopping-level"
-								class="acc-label flex w-full items-center justify-between gap-2 text-left"
+								class="acc-label flex  w-full items-center justify-between gap-2 text-left font-bold"
 								on:click={() => {
 									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
 								}}
@@ -141,7 +141,7 @@
 						<Accordion.Item value="education">
 							<Accordion.Trigger
 								id="education-level"
-								class="acc-label"
+								class="acc-label font-bold "
 								on:click={() => {
 									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
 								}}
@@ -166,7 +166,7 @@
 						<Accordion.Item value="hospitals">
 							<Accordion.Trigger
 								id="hospitals-level"
-								class="acc-label"
+								class="acc-label font-bold "
 								on:click={() => {
 									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
 								}}
@@ -189,7 +189,7 @@
 						<Accordion.Item value="commercial">
 							<Accordion.Trigger
 								id="commercial-level"
-								class="acc-label"
+								class="acc-label font-bold "
 								on:click={() => {
 									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
 								}}

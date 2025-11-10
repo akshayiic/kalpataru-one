@@ -2828,8 +2828,7 @@
 			allScenes['17-kids-play-zone'].scene,
 			{ yaw: 2.7470729920265375, pitch: 0.012736981181785012 },
 			allScenes['4-indoor-kids-play-area'].scene,
-			'Indoor Kids',
-			'Play Area',
+			`Indoor Kids' Play Area`,
 			'4-indoor-kids-play-area'
 		);
 
@@ -3036,7 +3035,7 @@
 			allScenes['5-lift-lobby'].scene,
 			{ yaw: 0.86761019887415, pitch: -0.014736286099340745 },
 			allScenes['6-convinience-store'].scene,
-			'Convinience Store',
+			'Convenience Store',
 			'6-convinience-store'
 		);
 
@@ -3385,16 +3384,16 @@
 				);
 				allScenes[changedHotspot].scene.switchTo();
 				window.view = allScenes[changedHotspot].view;
-				window.dragControlMethod.addEventListener('parameterDynamics', function () {
-					document.querySelectorAll('.info-hotspot').forEach((e) => {
-						setTimeout(() => {
-							e.style.transform = resetNegativeTranslations(
-								e.style.transform,
-								e.querySelector('.hotspot')
-							);
-						}, 500);
-					});
-				});
+				// window.dragControlMethod.addEventListener('parameterDynamics', function () {
+				// 	document.querySelectorAll('.info-hotspot').forEach((e) => {
+				// 		setTimeout(() => {
+				// 			e.style.transform = resetNegativeTranslations(
+				// 				e.style.transform,
+				// 				e.querySelector('.hotspot')
+				// 			);
+				// 		}, 500);
+				// 	});
+				// });
 			}
 		});
 
@@ -3469,6 +3468,7 @@
 						<Accordion.Root type="single" collapsible class="w-full sm:max-w-full">
 							<Accordion.Item value="item-12">
 								<Accordion.Trigger
+									class="acc-label font-bold "
 									on:click={() => {
 										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
 									}}>Ground Floor</Accordion.Trigger
@@ -3490,6 +3490,7 @@
 
 							<Accordion.Item value="item-13">
 								<Accordion.Trigger
+									class="acc-label font-bold "
 									on:click={() => {
 										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
 									}}>Podium (P4 & P6)</Accordion.Trigger
@@ -3511,6 +3512,7 @@
 
 							<Accordion.Item value="item-14" class=" ">
 								<Accordion.Trigger
+									class="acc-label font-bold "
 									id="clubhouse"
 									on:click={() => {
 										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
@@ -3533,6 +3535,7 @@
 
 							<Accordion.Item value="item-15" class=" ">
 								<Accordion.Trigger
+									class="acc-label font-bold "
 									id="eco-level"
 									on:click={() => {
 										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
@@ -3555,6 +3558,7 @@
 
 							<Accordion.Item value="item-16" class=" ">
 								<Accordion.Trigger
+									class="acc-label font-bold "
 									id="podium-stilt"
 									on:click={() => {
 										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
@@ -3577,6 +3581,7 @@
 
 							<Accordion.Item value="item-17" class=" ">
 								<Accordion.Trigger
+									class="acc-label font-bold "
 									id="sky-level"
 									on:click={() => {
 										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
