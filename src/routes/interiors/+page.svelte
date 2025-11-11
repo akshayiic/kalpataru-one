@@ -1823,7 +1823,7 @@
 						/>
 					</svg>
 
-					<span class="sm:text-[0.6rem] lg:text-[0.8rem]"> Interior Unit </span>
+					<span class="sm:text-[0.6rem] lg:text-[1rem]"> Interior Unit </span>
 				</div>
 				<button
 					on:click={() => {
