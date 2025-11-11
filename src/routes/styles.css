@@ -769,6 +769,14 @@ button {
 		font-size: 0.7rem !important;
 		font-weight: 900 !important;
 	}
+
+	.details-panel-lg {
+		display: none;
+	}
+
+	.details-panel {
+		display: block;
+	}
 }
 
 @media (max-width: 999px) {
