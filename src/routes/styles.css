@@ -141,6 +141,7 @@ input[type='checkbox'] {
 	max-height: 16rem;
 	overflow-y: auto;
 	border-radius: 0.7rem;
+	scroll-behavior: smooth;
 }
 
 .inner-modal-btn {
@@ -305,6 +306,9 @@ input[type='checkbox'] {
 nav button {
 	user-select: none;
 }
+
+
+
 
 @media (min-width: 1020px) and (max-width: 1240px) {
 	.left-panel-wrapper {
@@ -759,6 +763,11 @@ button {
 
 	.ghost-input {
 		padding: 0.5rem;
+	}
+
+	.acc-label {
+		font-size: 0.7rem !important;
+		font-weight: 900 !important;
 	}
 }
 

@@ -1863,7 +1863,7 @@
 			allScenes['3-lap-pool-tower-a'].scene,
 			{ yaw: 0.3812850471523639, pitch: 0.3168563177487531 },
 			allScenes['5-seating-planters-tower-b'].scene,
-			'Seating Planters Tower B',
+			'Lookout Deck Tower B',
 			'5-seating-planters-tower-b'
 		);
 
@@ -3271,13 +3271,13 @@
 			'14-banquet-hall'
 		);
 
-		createHotspot(
-			allScenes['13-banquet-drop-off'].scene,
-			{ yaw: 0.5735703228318876, pitch: 0.0897248311566834 },
-			allScenes['13-banquet-drop-off'].scene,
-			'Banquet Drop Off',
-			'13-banquet-drop-off'
-		);
+		// createHotspot(
+		// 	allScenes['13-banquet-drop-off'].scene,
+		// 	{ yaw: 0.5735703228318876, pitch: 0.0897248311566834 },
+		// 	allScenes['13-banquet-drop-off'].scene,
+		// 	'Banquet Drop Off',
+		// 	'13-banquet-drop-off'
+		// );
 
 		createHotspot(
 			allScenes['13-banquet-drop-off'].scene,
@@ -3420,6 +3420,24 @@
 	onDestroy(() => {
 		if (unsubscribeHotSpot) unsubscribeHotSpot();
 	});
+
+	async function scrollToTopOnOpen(id) {
+		await tick();
+
+		const trigger = document.getElementById(id);
+		if (!trigger || !innerGroup) return;
+
+		setTimeout(() => {
+			const triggerRect = trigger.getBoundingClientRect();
+			const containerRect = innerGroup.getBoundingClientRect();
+			const offset = triggerRect.top - containerRect.top + innerGroup.scrollTop;
+
+			innerGroup.scrollTo({
+				top: offset - 5,
+				behavior: 'smooth'
+			});
+		}, 150);
+	}
 </script>
 
 {#if !$ishighlights}
@@ -3428,7 +3446,7 @@
 			<div class="left-panel--header flex justify-between gap-[2rem] lg:gap-[5rem]">
 				<div class="left-title flex items-center font-bold">
 					<svg
-						class="mr-2"
+						class="ml-1 mr-2 h-auto sm:!w-4 lg:!w-6"
 						width="25"
 						height="25"
 						viewBox="0 0 32 32"
@@ -3454,25 +3472,27 @@
 					id="minimize-toggle-vicinity"
 				>
 					{#if !$isAmenitiesMinimized}
-						<img src={minimizeBtn} alt="minimize" />
+						<img src={minimizeBtn} alt="minimize" class="sm:w-5 lg:w-full" />
 					{/if}
 					{#if $isAmenitiesMinimized}
-						<img src={maximizeBtn} alt="maximize" />
+						<img src={maximizeBtn} alt="maximize" class="sm:w-5 lg:w-full" />
 					{/if}
 				</button>
 			</div>
 
 			<div class={!$isAmenitiesMinimized ? 'block' : 'hidden'}>
-				<div class="pt-3">
+				<div class="sm:pt-1 lg:pt-3">
 					<div class="inner-btn-group" bind:this={innerGroup}>
 						<Accordion.Root type="single" collapsible class="w-full sm:max-w-full">
+							<!-- Ground Floor -->
 							<Accordion.Item value="item-12">
 								<Accordion.Trigger
-									class="acc-label font-bold "
-									on:click={() => {
-										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
-									}}>Ground Floor</Accordion.Trigger
+									class="acc-label font-bold"
+									id="ground-floor"
+									on:click={() => scrollToTopOnOpen('ground-floor')}
 								>
+									Ground Floor
+								</Accordion.Trigger>
 								<Accordion.Content>
 									{#each [{ id: '0-entrance-1', label: 'Entrance 1' }, { id: '1-entrance-2', label: 'Entrance 2' }, { id: '2-entrance-3', label: 'Entrance 3' }, { id: '3-drop-off', label: 'Drop - Off' }, { id: '4-entrance-lobby', label: 'Entrance Lobby' }, { id: '5-lift-lobby', label: 'Lift Lobby' }, { id: '6-convinience-store', label: 'Convenience Store' }, { id: '7-jogging-path', label: 'Jogging Path' }, { id: '12-jogging-track---500m', label: 'Jogging Path - 500m' }, { id: '8-garden-pavillion', label: 'Garden Pavilion' }, { id: '9-kids-play-area', label: "Kids' Play Area" }, { id: '10-box-cricket', label: 'Box Cricket' }, { id: '11-social-pods', label: 'Social Pods' }, { id: '15-pet-run', label: 'Pet Run' }, { id: '13-banquet-drop-off', label: 'Banquet Drop Off' }, { id: '14-banquet-hall', label: 'Banquet Hall' }] as scene}
 										<button
@@ -3482,19 +3502,28 @@
 											id={'am-' + scene.id}
 											on:click={() => ($hotspotName = scene.id)}
 										>
-											{scene.label}
+											<span
+												class={$hotspotName == scene.id
+													? 'max-w-none transition-all duration-200 sm:text-[0.5rem] lg:text-xs'
+													: 'max-w-[10rem] truncate transition-all duration-200 sm:!text-[0.6rem] lg:!text-[0.8rem]'}
+												title={scene.label}
+											>
+												{scene.label}
+											</span>
 										</button>
 									{/each}
 								</Accordion.Content>
 							</Accordion.Item>
 
+							<!-- Podium -->
 							<Accordion.Item value="item-13">
 								<Accordion.Trigger
-									class="acc-label font-bold "
-									on:click={() => {
-										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
-									}}>Podium (P4 & P6)</Accordion.Trigger
+									class="acc-label font-bold"
+									id="podium"
+									on:click={() => scrollToTopOnOpen('podium')}
 								>
+									Podium (P4 & P6)
+								</Accordion.Trigger>
 								<Accordion.Content>
 									{#each [{ id: '6-squash-court', label: 'Squash Court' }, { id: '2-games-room', label: 'Games Room' }, { id: '8-womens-spa', label: "Women's Spa" }, { id: '5-mens-spa', label: "Men's Spa" }, { id: '4-jacuzzi-lounge', label: 'Jacuzzi Lounge' }, { id: '7-yoga-area', label: 'Yoga Area' }, { id: '1-cards-room', label: 'Cards Room' }, { id: '3-gymnasium---weights', label: 'Gymnasium - Weights' }] as scene}
 										<button
@@ -3504,99 +3533,138 @@
 											id={'am-' + scene.id}
 											on:click={() => ($hotspotName = scene.id)}
 										>
-											{scene.label}
+											<span
+												class={$hotspotName == scene.id
+													? 'max-w-none transition-all duration-200 sm:text-[0.5rem] lg:text-xs'
+													: 'max-w-[10rem] truncate transition-all duration-200 sm:!text-[0.6rem] lg:!text-[0.8rem]'}
+												title={scene.label}
+											>
+												{scene.label}
+											</span>
 										</button>
 									{/each}
 								</Accordion.Content>
 							</Accordion.Item>
 
-							<Accordion.Item value="item-14" class=" ">
+							<!-- Clubhouse -->
+							<Accordion.Item value="item-14">
 								<Accordion.Trigger
-									class="acc-label font-bold "
+									class="acc-label font-bold"
 									id="clubhouse"
-									on:click={() => {
-										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
-									}}>Clubhouse</Accordion.Trigger
+									on:click={() => scrollToTopOnOpen('clubhouse')}
 								>
+									Clubhouse
+								</Accordion.Trigger>
 								<Accordion.Content>
 									{#each [{ id: '2-juice-bar', label: 'Juice Bar' }, { id: '1-gymnasium-cardio', label: 'Gymnasium - Cardio' }, { id: '0-activity-room', label: 'Activity Room' }] as scene}
 										<button
 											class={$hotspotName == scene.id
-												? 'active inner-modal-btn '
-												: 'inner-modal-btn '}
+												? 'active inner-modal-btn'
+												: 'inner-modal-btn'}
 											id={'am-' + scene.id}
 											on:click={() => ($hotspotName = scene.id)}
 										>
-											<span class="max-w-[10rem] truncate" title={scene.label}> {scene.label}</span>
+											<span
+												class={$hotspotName == scene.id
+													? 'max-w-none transition-all duration-200 sm:text-[0.5rem] lg:text-xs'
+													: 'max-w-[10rem] truncate transition-all duration-200 sm:!text-[0.6rem] lg:!text-[0.8rem]'}
+												title={scene.label}
+											>
+												{scene.label}
+											</span>
 										</button>
 									{/each}
 								</Accordion.Content>
 							</Accordion.Item>
 
-							<Accordion.Item value="item-15" class=" ">
+							<!-- Eco Deck Level -->
+							<Accordion.Item value="item-15">
 								<Accordion.Trigger
-									class="acc-label font-bold "
+									class="acc-label font-bold"
 									id="eco-level"
-									on:click={() => {
-										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
-									}}>Eco Deck Level</Accordion.Trigger
+									on:click={() => scrollToTopOnOpen('eco-level')}
 								>
+									Eco Deck Level
+								</Accordion.Trigger>
 								<Accordion.Content>
 									{#each [{ id: '12-lap-pool', label: 'Lap Pool' }, { id: '7-aqua-deck', label: 'Aqua Deck' }, { id: '15-spa-pod', label: 'Spa Pods' }, { id: '11-kids-pool', label: "Kids' Pool" }, { id: '9-family-pavilion', label: 'Family Pavilion' }, { id: '13-landscape-garden', label: 'Landscape Gardens' }, { id: '16-walking-track', label: 'Walking Track' }, { id: '8-event-deck-lawn', label: 'Event Deck & Lawn' }, { id: '14-multipurpose-lawn', label: 'Multipurpose Lawn' }, { id: '18-social-pods', label: 'Social Pods' }, { id: '10-fitness-corner', label: 'Fitness Corner' }, { id: '17-kids-play-zone', label: "Kids' Play Zone" }] as scene}
 										<button
 											class={$hotspotName == scene.id
-												? 'active inner-modal-btn '
-												: 'inner-modal-btn '}
+												? 'active inner-modal-btn'
+												: 'inner-modal-btn'}
 											id={'am-' + scene.id}
 											on:click={() => ($hotspotName = scene.id)}
 										>
-											<span class="max-w-[10rem] truncate" title={scene.label}> {scene.label}</span>
+											<span
+												class={$hotspotName == scene.id
+													? 'max-w-none transition-all duration-200 sm:text-[0.5rem] lg:text-xs'
+													: 'max-w-[10rem] truncate transition-all duration-200 sm:!text-[0.6rem] lg:!text-[0.8rem]'}
+												title={scene.label}
+											>
+												{scene.label}
+											</span>
 										</button>
 									{/each}
 								</Accordion.Content>
 							</Accordion.Item>
 
-							<Accordion.Item value="item-16" class=" ">
+							<!-- Podium Stilt -->
+							<Accordion.Item value="item-16">
 								<Accordion.Trigger
-									class="acc-label font-bold "
+									class="acc-label font-bold"
 									id="podium-stilt"
-									on:click={() => {
-										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
-									}}>Podium Stilt</Accordion.Trigger
+									on:click={() => scrollToTopOnOpen('podium-stilt')}
 								>
+									Podium Stilt
+								</Accordion.Trigger>
 								<Accordion.Content>
 									{#each [{ id: '4-indoor-kids-play-area', label: "Indoor Kids' Play Area" }, { id: '5-salon', label: 'Salon' }, { id: '6-mini-theatre', label: 'Mini Theatre' }, { id: '3-business-centre', label: 'Business Centre' }] as scene}
 										<button
 											class={$hotspotName == scene.id
-												? 'active inner-modal-btn '
-												: 'inner-modal-btn '}
+												? 'active inner-modal-btn'
+												: 'inner-modal-btn'}
 											id={'am-' + scene.id}
 											on:click={() => ($hotspotName = scene.id)}
 										>
-											<span class="max-w-[10rem] truncate" title={scene.label}> {scene.label}</span>
+											<span
+												class={$hotspotName == scene.id
+													? 'max-w-none transition-all duration-200 sm:text-[0.5rem] lg:text-xs'
+													: 'max-w-[10rem] truncate transition-all duration-200 sm:!text-[0.6rem] lg:!text-[0.8rem]'}
+												title={scene.label}
+											>
+												{scene.label}
+											</span>
 										</button>
 									{/each}
 								</Accordion.Content>
 							</Accordion.Item>
 
-							<Accordion.Item value="item-17" class=" ">
+							<!-- Sky Level -->
+							<Accordion.Item value="item-17">
 								<Accordion.Trigger
-									class="acc-label font-bold "
+									class="acc-label font-bold"
 									id="sky-level"
-									on:click={() => {
-										if (innerGroup) innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
-									}}>Sky Level</Accordion.Trigger
+									on:click={() => scrollToTopOnOpen('sky-level')}
 								>
+									Sky Level
+								</Accordion.Trigger>
 								<Accordion.Content>
 									{#each [{ id: '4-chillout-lawn-tower-a', label: 'Chill Out Lawn Tower A' }, { id: '3-lap-pool-tower-a', label: 'Lap Pool Tower A' }, { id: '0-cozy-lounge-deck-tower-a', label: 'Cozy Lounge Deck Tower A' }, { id: '1-sky-lounge-room-1-tower-a', label: 'Sky Lounge Room 1 Tower A' }, { id: '2-sky-lounge-room-2-tower-a', label: 'Sky Lounge Room 2 Tower A' }, { id: '5-seating-planters-tower-b', label: 'Seating Planters Tower B' }, { id: '6-chillout-deck-tower-b', label: 'Chill Out Deck Tower B' }, { id: '7-lap-pool-tower-b', label: 'Lap Pool Tower B' }, { id: '8-social-deck-tower-b', label: 'Social Deck Tower B' }, { id: '12-lookout-deck-tower-c', label: 'Lookout Deck Tower C' }, { id: '11-pool-loungers-tower-c', label: 'Pool Loungers Tower C' }, { id: '9-lap-pool-tower-c', label: 'Lap Pool Tower C' }, { id: '10-chillout-deck-tower-c', label: 'Chill Out Deck Tower C' }] as scene}
 										<button
 											class={$hotspotName == scene.id
-												? 'active inner-modal-btn '
-												: 'inner-modal-btn '}
+												? 'active inner-modal-btn'
+												: 'inner-modal-btn'}
 											id={'am-' + scene.id}
 											on:click={() => ($hotspotName = scene.id)}
 										>
-											<span class="max-w-[10rem] truncate" title={scene.label}> {scene.label}</span>
+											<span
+												class={$hotspotName == scene.id
+													? 'max-w-none transition-all duration-200 sm:text-[0.5rem] lg:text-xs'
+													: 'max-w-[10rem] truncate transition-all duration-200 sm:!text-[0.6rem] lg:!text-[0.8rem]'}
+												title={scene.label}
+											>
+												{scene.label}
+											</span>
 										</button>
 									{/each}
 								</Accordion.Content>

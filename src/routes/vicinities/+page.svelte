@@ -1,5 +1,5 @@
 <script>
-	import { getContext } from 'svelte';
+	import { getContext, tick } from 'svelte';
 	import minimizeBtn from '$lib/images/minimize-icon.svg';
 	import maximizeBtn from '$lib/images/maximize-icon.svg';
 	import * as Accordion from '$lib/components/ui/accordion/index.ts';
@@ -38,6 +38,24 @@
 	});
 
 	const isDay = writable();
+
+	async function scrollToTopOnOpen(id) {
+		await tick();
+
+		const trigger = document.getElementById(id);
+		if (!trigger || !innerGroup) return;
+
+		setTimeout(() => {
+			const triggerRect = trigger.getBoundingClientRect();
+			const containerRect = innerGroup.getBoundingClientRect();
+			const offset = triggerRect.top - containerRect.top + innerGroup.scrollTop;
+
+			innerGroup.scrollTo({
+				top: offset - 5,
+				behavior: 'smooth'
+			});
+		}, 150);
+	}
 </script>
 
 <div class="left-panel-wrapper">
@@ -45,7 +63,7 @@
 		<div class="left-panel--header flex justify-between gap-[2rem] lg:gap-[5rem]">
 			<div class="left-title flex items-center font-bold">
 				<svg
-					class="mr-2"
+					class="ml-1 mr-2 h-auto sm:!w-4 lg:!w-6"
 					width="17"
 					height="16"
 					viewBox="0 0 17 16"
@@ -71,10 +89,10 @@
 				id="minimize-toggle-vicinity"
 			>
 				{#if !$isAmenitiesMinimized}
-					<img src={minimizeBtn} alt="minimize" />
+					<img src={minimizeBtn} alt="minimize" class="sm:w-5 lg:w-full" />
 				{/if}
 				{#if $isAmenitiesMinimized}
-					<img src={maximizeBtn} alt="maximize" />
+					<img src={maximizeBtn} alt="maximize" class="sm:w-5 lg:w-full" />
 				{/if}
 			</button>
 		</div>
@@ -83,23 +101,24 @@
 			isInteriorUnitDataMinimized
 			transition:slide={{ duration: 100, axis: 'y' }}
 		>
-			<div class="no-hovers pt-3">
+			<div class="no-hovers sm:pt-1 lg:pt-3">
 				<div class="inner-btn-group" bind:this={innerGroup}>
 					<Accordion.Root class="w-full sm:max-w-full">
+						<!-- Hidden item (keep as-is) -->
 						<Accordion.Item class="hidden" value="item-1wqweqweqweqwe">
 							<Accordion.Trigger id="station-level-ss" class="hidden">asdasdasd</Accordion.Trigger>
 						</Accordion.Item>
 
+						<!-- Connectivity -->
 						<Accordion.Item value="connectivity">
 							<Accordion.Trigger
 								id="connectivity-level"
-								class="acc-label font-bold "
-								on:click={() => {
-									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
-								}}
+								class="acc-label font-bold"
+								on:click={() => scrollToTopOnOpen('connectivity-level')}
 							>
 								Connectivity
 							</Accordion.Trigger>
+
 							<Accordion.Content>
 								{#each [{ id: 'Towards Mumbai Trans Harbour Link.webp', label: 'Towards Mumbai Trans Harbour Link' }, { id: 'Coastal Road.webp', label: 'Coastal Road' }, { id: 'Towards T2 terminal_ CSIA.webp', label: 'Towards T2 terminal/ CSIA' }, { id: 'Upcoming Worli- Sewri Elevated Connecter.webp', label: 'Upcoming Worli- Sewri Elevated Connecter' }, { id: 'Bandra - Worli Sea Link.webp', label: 'Bandra - Worli Sea Link' }] as scene}
 									<button
@@ -107,23 +126,29 @@
 										id={'x-' + scene.id.replaceAll(/[\s.]+/g, '-') + '-am'}
 										on:click={() => vicinityImg.set(scene.id)}
 									>
-										{scene.label}
+										<span
+											class={$vicinityImg == scene.id
+												? 'max-w-none transition-all duration-200 sm:text-[0.5rem] lg:text-xs'
+												: 'max-w-[10rem] truncate transition-all duration-200 sm:text-[0.6rem] lg:!text-[0.8rem]'}
+											title={scene.label}
+										>
+											{scene.label}
+										</span>
 									</button>
 								{/each}
 							</Accordion.Content>
 						</Accordion.Item>
 
+						<!-- Shopping -->
 						<Accordion.Item value="shopping">
 							<Accordion.Trigger
 								id="shopping-level"
-								class="acc-label flex  w-full items-center justify-between gap-2 text-left font-bold"
-								on:click={() => {
-									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
-								}}
+								class="acc-label flex w-full items-center justify-between gap-2 text-left font-bold"
+								on:click={() => scrollToTopOnOpen('shopping-level')}
 							>
-								<span class="max-w-[85%] truncate" title="Shopping & Entertainment"
-									>Shopping & Entertainment</span
-								>
+								<span class="max-w-[85%] truncate" title="Shopping & Entertainment">
+									Shopping & Entertainment
+								</span>
 							</Accordion.Trigger>
 							<Accordion.Content>
 								{#each [{ id: 'Four Seasons.webp', label: 'Four Seasons' }, { id: 'Nehru Planetarium.webp', label: 'Nehru Planetarium' }, { id: 'St.Regis.webp', label: 'St.Regis' }, { id: 'Kamala Mills Compound.webp', label: 'Kamala Mills Compound' }, { id: 'Todi Mills Compound.webp', label: 'Todi Mills Compound' }, { id: 'Willingdon Sports Club.webp', label: 'Willingdon Sports Club' }, { id: 'Bombay Gymkhana.webp', label: 'Bombay Gymkhana' }, { id: 'Jio World Drive.webp', label: 'Jio World Drive' }, { id: 'Towards Bay Club.webp', label: 'Towards Bay Club' }] as scene}
@@ -132,23 +157,29 @@
 										id={'x-' + scene.id.replaceAll(/[\s.]+/g, '-') + '-am'}
 										on:click={() => vicinityImg.set(scene.id)}
 									>
-										{scene.label}
+										<span
+											class={$vicinityImg == scene.id
+												? 'max-w-none transition-all duration-200 sm:text-[0.5rem] lg:text-xs'
+												: 'max-w-[10rem] truncate transition-all duration-200 sm:text-[0.6rem] lg:!text-[0.8rem]'}
+											title={scene.label}
+										>
+											{scene.label}
+										</span>
 									</button>
 								{/each}
 							</Accordion.Content>
 						</Accordion.Item>
 
+						<!-- Education -->
 						<Accordion.Item value="education">
 							<Accordion.Trigger
 								id="education-level"
-								class="acc-label font-bold "
-								on:click={() => {
-									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
-								}}
+								class="acc-label font-bold"
+								on:click={() => scrollToTopOnOpen('education-level')}
 							>
-								<span class="max-w-[85%] truncate" title="Education Institutes"
-									>Education Institutes</span
-								>
+								<span class="max-w-[85%] truncate" title="Education Institutes">
+									Education Institutes
+								</span>
 							</Accordion.Trigger>
 							<Accordion.Content>
 								{#each [{ id: 'Podar ORT International School.webp', label: 'Podar ORT International School' }, { id: 'Towards Dhirubhai Ambani International School.webp', label: 'Towards Dhirubhai Ambani International School' }, { id: 'Bombay Scottish.webp', label: 'Bombay Scottish' }, { id: 'KGT International School.webp', label: 'KGT International School' }] as scene}
@@ -157,19 +188,25 @@
 										id={'x-' + scene.id.replaceAll(/[\s.]+/g, '-') + '-am'}
 										on:click={() => vicinityImg.set(scene.id)}
 									>
-										{scene.label}
+										<span
+											class={$vicinityImg == scene.id
+												? 'max-w-none transition-all duration-200 sm:text-[0.5rem] lg:text-xs'
+												: 'max-w-[10rem] truncate transition-all duration-200 sm:text-[0.6rem] lg:!text-[0.8rem]'}
+											title={scene.label}
+										>
+											{scene.label}
+										</span>
 									</button>
 								{/each}
 							</Accordion.Content>
 						</Accordion.Item>
 
+						<!-- Hospitals -->
 						<Accordion.Item value="hospitals">
 							<Accordion.Trigger
 								id="hospitals-level"
-								class="acc-label font-bold "
-								on:click={() => {
-									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
-								}}
+								class="acc-label font-bold"
+								on:click={() => scrollToTopOnOpen('hospitals-level')}
 							>
 								Hospitals
 							</Accordion.Trigger>
@@ -180,19 +217,25 @@
 										id={'x-' + scene.id.replaceAll(/[\s.]+/g, '-') + '-am'}
 										on:click={() => vicinityImg.set(scene.id)}
 									>
-										{scene.label}
+										<span
+											class={$vicinityImg == scene.id
+												? 'max-w-none transition-all duration-200 sm:text-[0.5rem] lg:text-xs'
+												: 'max-w-[10rem] truncate transition-all duration-200 sm:text-[0.6rem] lg:!text-[0.8rem]'}
+											title={scene.label}
+										>
+											{scene.label}
+										</span>
 									</button>
 								{/each}
 							</Accordion.Content>
 						</Accordion.Item>
 
+						<!-- Commercial -->
 						<Accordion.Item value="commercial">
 							<Accordion.Trigger
 								id="commercial-level"
-								class="acc-label font-bold "
-								on:click={() => {
-									innerGroup.scrollTo({ top: 0, behavior: 'smooth' });
-								}}
+								class="acc-label font-bold"
+								on:click={() => scrollToTopOnOpen('commercial-level')}
 							>
 								Commercial Hubs
 							</Accordion.Trigger>
@@ -203,7 +246,14 @@
 										id={'x-' + scene.id.replaceAll(/[\s.]+/g, '-') + '-am'}
 										on:click={() => vicinityImg.set(scene.id)}
 									>
-										{scene.label}
+										<span
+											class={$vicinityImg == scene.id
+												? 'max-w-none transition-all duration-200 sm:text-[0.5rem] lg:text-xs'
+												: 'max-w-[10rem] truncate transition-all duration-200 sm:text-[0.6rem] lg:!text-[0.8rem]'}
+											title={scene.label}
+										>
+											{scene.label}
+										</span>
 									</button>
 								{/each}
 							</Accordion.Content>

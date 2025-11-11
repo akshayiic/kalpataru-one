@@ -158,7 +158,7 @@
 		src={mainLogo}
 		alt=""
 		id="mainLogo"
-		class="fixed left-4 top-[0.75rem] z-[200] w-[10rem] rounded lg:w-[18rem]"
+		class="fixed left-4 top-[0.75rem] z-[200] w-[8rem] rounded lg:w-[15rem]"
 	/>
 
 	<div class={'nav-wrapper ' + ($navSlide ? 'active-drop-wrapper' : '')}>

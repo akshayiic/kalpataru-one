@@ -1654,7 +1654,7 @@
 					<div class="left-panel--header flex justify-between gap-[2rem] lg:gap-[5rem]">
 						<div class="left-title flex items-center font-bold">
 							<svg
-								class="mr-2"
+								class="ml-1 mr-2 h-auto sm:!w-4 lg:!w-6"
 								width="17"
 								height="17"
 								viewBox="0 0 17 17"
@@ -1688,10 +1688,10 @@
 							id="minimize-toggle-vicinity"
 						>
 							{#if !$isbhklist}
-								<img src={minimizeBtn} alt="minimize" />
+								<img src={minimizeBtn} alt="minimize" class="sm:w-5 lg:w-full" />
 							{/if}
 							{#if $isbhklist}
-								<img src={maximizeBtn} alt="maximize" />
+								<img src={maximizeBtn} alt="maximize" class="sm:w-5 lg:w-full" />
 							{/if}
 						</button>
 					</div>
@@ -1857,7 +1857,9 @@
 											$hotspotName = scene.id;
 										}}
 									>
-										{scene.label}
+										<span class="sm:text-[0.6rem] lg:text-[0.8rem]">
+											{scene.label}
+										</span>
 									</button>
 								{/each}
 							{/if}
@@ -1870,7 +1872,9 @@
 										id={'am-' + scene.id}
 										on:click={() => ($hotspotName = scene.id)}
 									>
-										{scene.label}
+										<span class="sm:text-[0.6rem] lg:text-[0.8rem]">
+											{scene.label}
+										</span>
 									</button>
 								{/each}
 							{/if}
